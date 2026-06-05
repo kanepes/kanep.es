@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    { "source": "/vasara", "destination": "https://vasara.kanep.es", "permanent": false },
+    { "source": "/pass",   "destination": "https://lolo.id/events/2e5c50c7-1abe-4ccb-a721-ede0db6c2b0e/", "permanent": false },
+    { "source": "/pilnais","destination": "https://lolo.id/events/2e5c50c7-1abe-4ccb-a721-ede0db6c2b0e/", "permanent": false }
+  ],
+  "cleanUrls": true
+}
