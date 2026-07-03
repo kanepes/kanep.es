@@ -15,6 +15,8 @@ Short-link and landing page domain for Kaņepes Kultūras centrs.
 | `kanep.es/vasara` | kanepes.lv/lv/notikumi/vasaras-koncerti-26/ |
 | `kanep.es/pass` | lolo.id abonement page |
 | `kanep.es/pilnais` | lolo.id abonement page |
+| `kanep.es/sofasessions` | kanepes.lv/notikumi/sofa-sessions/ |
+| `atbalsti.kanep.es` | kanepes.lv/atbalsti/ (subdomain via Vercel `has` matcher) |
 
 To add a new short link: edit `redirects` in `vercel.json` → `vercel --prod`.
 
@@ -55,6 +57,31 @@ Build/install commands are empty (redirect-only project, no build needed).
 - **Owner:** kasparkondrat GitHub account
 - **Repo visibility:** Public (required for Vercel Hobby auto-deploy from org repos)
 - Future KKC web projects should go here, not under kasparkondrat personal
+
+## Sofa Sessions
+
+Monthly vinyl listening series at KKC, curated by Jurijs Lapančuks. Free admission.
+
+- **LV page**: `kanepes.lv/notikumi/sofa-sessions/` (WP post ID 2384)
+- **EN page**: `kanepes.lv/notikumi/sofa-sessions-en/` (WP post ID 2386)
+- **Short link**: `kanep.es/sofasessions`
+- **Donate button**: links to `/atbalsti/` (EveryPay direct link pending production credentials)
+
+## Atbalsti (Donation page)
+
+Donation landing page with two causes: "Biedrībai kopumā" and "Sofa Sessions".
+
+- **URL**: `kanepes.lv/atbalsti/` (WP page ID 2387)
+- **Subdomain**: `atbalsti.kanep.es` → `kanepes.lv/atbalsti/`
+  - Vercel: domain added, `has`-matcher redirect in vercel.json
+  - GoDaddy: needs A record `atbalsti` → `76.76.21.21` (TODO if not done)
+- **EveryPay buttons**: currently "Drīzumā" state (production credentials pending)
+- **When EveryPay is ready**: update the WP page content via WP Admin or REST API to replace `cause-card--soon` class + "Drīzumā" with real LinkPay `href` URLs
+- **Reg. Nr.**: 40008229307
+
+### Polylang translation linking (manual step)
+After EN Sofa Sessions post was created (ID 2386), link it to LV ID 2384 via:
+WP Admin → Notikumi → sofa-sessions-en → Polylang Language box → set English → link to ID 2384
 
 ## Vasaras Koncerti 2026
 
