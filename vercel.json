@@ -3,9 +3,11 @@
   "installCommand": "",
   "outputDirectory": ".",
   "redirects": [
-    { "source": "/vasara", "destination": "https://kanepes.lv/lv/notikumi/vasaras-koncerti-26/", "permanent": false },
-    { "source": "/pass",   "destination": "https://lolo.id/events/2e5c50c7-1abe-4ccb-a721-ede0db6c2b0e/", "permanent": false },
-    { "source": "/pilnais","destination": "https://lolo.id/events/2e5c50c7-1abe-4ccb-a721-ede0db6c2b0e/", "permanent": false }
+    { "source": "/vasara",       "destination": "https://kanepes.lv/lv/notikumi/vasaras-koncerti-26/", "permanent": false },
+    { "source": "/pass",         "destination": "https://lolo.id/events/2e5c50c7-1abe-4ccb-a721-ede0db6c2b0e/", "permanent": false },
+    { "source": "/pilnais",      "destination": "https://lolo.id/events/2e5c50c7-1abe-4ccb-a721-ede0db6c2b0e/", "permanent": false },
+    { "source": "/sofasessions", "destination": "https://kanepes.lv/notikumi/sofa-sessions/", "permanent": false },
+    { "source": "/:path*", "has": [{ "type": "host", "value": "atbalsti.kanep.es" }], "destination": "https://kanepes.lv/atbalsti/", "permanent": false }
   ],
   "cleanUrls": true
 }
