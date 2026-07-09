@@ -16,6 +16,7 @@ Short-link and landing page domain for Kaņepes Kultūras centrs.
 | `kanep.es/pass` | lolo.id abonement page |
 | `kanep.es/pilnais` | lolo.id abonement page |
 | `kanep.es/sofasessions` | kanepes.lv/notikumi/sofa-sessions/ |
+| `kanep.es/donations`    | kanepes.lv/atbalsti/ |
 | `atbalsti.kanep.es` | kanepes.lv/atbalsti/ (subdomain via Vercel `has` matcher) |
 
 To add a new short link: edit `redirects` in `vercel.json` → `vercel --prod`.
@@ -65,18 +66,20 @@ Monthly vinyl listening series at KKC, curated by Jurijs Lapančuks. Free admiss
 - **LV page**: `kanepes.lv/notikumi/sofa-sessions/` (WP post ID 2384)
 - **EN page**: `kanepes.lv/notikumi/sofa-sessions-en/` (WP post ID 2386)
 - **Short link**: `kanep.es/sofasessions`
-- **Donate button**: links to `/atbalsti/` (EveryPay direct link pending production credentials)
+- **Donate button**: links to `/atbalsti/` → EveryPay Sofa Sessions: `https://swedbank.every-pay.eu/lp/eixidnui8j` (LIVE 2026-07-09)
 
 ## Atbalsti (Donation page)
 
 Donation landing page with two causes: "Biedrībai kopumā" and "Sofa Sessions".
 
 - **URL**: `kanepes.lv/atbalsti/` (WP page ID 2387)
+- **Short link**: `kanep.es/donations` → `kanepes.lv/atbalsti/` (LIVE 2026-07-09)
 - **Subdomain**: `atbalsti.kanep.es` → `kanepes.lv/atbalsti/`
   - Vercel: domain added, `has`-matcher redirect in vercel.json
   - GoDaddy: needs A record `atbalsti` → `76.76.21.21` (TODO if not done)
-- **EveryPay buttons**: currently "Drīzumā" state (production credentials pending)
-- **When EveryPay is ready**: update the WP page content via WP Admin or REST API to replace `cause-card--soon` class + "Drīzumā" with real LinkPay `href` URLs
+- **EveryPay buttons**: LIVE (production credentials active 2026-07-09)
+  - Cause 01 (Biedrībai kopumā): `https://swedbank.every-pay.eu/lp/sekfpgc2sf`
+  - Cause 02 (Sofa Sessions): `https://swedbank.every-pay.eu/lp/eixidnui8j`
 - **Reg. Nr.**: 40008229307
 
 ### Polylang translation linking (manual step)
