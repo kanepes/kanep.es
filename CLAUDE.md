@@ -17,6 +17,7 @@ Short-link and landing page domain for Kaņepes Kultūras centrs.
 | `kanep.es/pilnais` | lolo.id abonement page |
 | `kanep.es/sofasessions` | kanepes.lv/notikumi/sofa-sessions/ |
 | `kanep.es/donations`    | kanepes.lv/atbalsti/ |
+| `kanep.es/klara`        | Klara safer-space anonymous report form (Notion) |
 | `atbalsti.kanep.es` | kanepes.lv/atbalsti/ (subdomain via Vercel `has` matcher) |
 
 To add a new short link: edit `redirects` in `vercel.json` → `vercel --prod`.
@@ -113,6 +114,16 @@ Abonements (Pilnais + Pusīte): https://lolo.id/events/2e5c50c7-1abe-4ccb-a721-e
 - 20% atlaide: jaunieši 13–25, studenti, seniori 65+, invalīdi (pavadonis bezmaksas), imigranti
 - Abonements "Pilnais" (visi 8): €60 | "Pusīte" (jebkuri 4 no 8): €30
 - Spēkā no 20.06.2026
+
+## Klara (Anonymous Safer-Space Reporting)
+
+Anonymous report form for KKC's Klara safer-space protocol. Open to staff and audience — abuse, mistreatment, power abuse, anything else. No login required, no identifying fields required.
+
+- **Short link**: `kanep.es/klara` → `https://kanepes.notion.site/39a5c3171a4a8085b9e5d0a5f84a388e` (LIVE 2026-07-10)
+- **Reports land in**: "Klara Reports" Notion teamspace (workspace `kanepes`) — `https://app.notion.com/p/kanepes/Klara-Reports-39a5c3171a4a80fdbcbcdc739b7a32e5`
+- **Reviewers**: Jurga (external contact, training co-facilitator) + Kaspars. More to be added by nomination.
+- **Why routed through kanep.es**: printed signage/QR stays valid even if the backend form changes later.
+- QR code assets: `~/Desktop/KLARA/klara-qr.png` (raster) and `klara-qr.svg` (vector, for print).
 
 ## kanepes.lv Server (DO Droplet kkc2021)
 

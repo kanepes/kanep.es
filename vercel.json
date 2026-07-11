@@ -7,7 +7,8 @@
     { "source": "/pass",         "destination": "https://lolo.id/events/2e5c50c7-1abe-4ccb-a721-ede0db6c2b0e/", "permanent": false },
     { "source": "/pilnais",      "destination": "https://lolo.id/events/2e5c50c7-1abe-4ccb-a721-ede0db6c2b0e/", "permanent": false },
     { "source": "/sofasessions", "destination": "https://kanepes.lv/notikumi/sofa-sessions/", "permanent": false },
-    { "source": "/donations",    "destination": "https://kanepes.lv/atbalsti/", "permanent": false }
+    { "source": "/donations",    "destination": "https://kanepes.lv/atbalsti/", "permanent": false },
+    { "source": "/klara",        "destination": "https://kanepes.notion.site/39a5c3171a4a8085b9e5d0a5f84a388e", "permanent": false }
   ],
   "cleanUrls": true
 }
