@@ -123,7 +123,7 @@ Anonymous report form for KKC's Klara safer-space protocol. Open to staff and au
 - **Reports land in**: "Klara Reports" Notion teamspace (workspace `kanepes`) — `https://app.notion.com/p/kanepes/Klara-Reports-39a5c3171a4a80fdbcbcdc739b7a32e5`
 - **Reviewers**: Jurga (external contact, training co-facilitator) + Kaspars. More to be added by nomination.
 - **Why routed through kanep.es**: printed signage/QR stays valid even if the backend form changes later.
-- QR code assets: `~/Desktop/KLARA/klara-qr.png` (raster) and `klara-qr.svg` (vector, for print).
+- **Project folder**: `~/Projects/klara/` — QR code assets (`klara-qr.png`/`.svg`), policy draft (`klara-report-policy.md`), Jurga onboarding doc (`klara-jurga-onboarding.md`).
 
 ## kanepes.lv Server (DO Droplet kkc2021)
 
