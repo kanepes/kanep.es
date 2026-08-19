@@ -16,6 +16,7 @@ Short-link and landing page domain for Kaņepes Kultūras centrs.
 | `kanep.es/pass` | lolo.id abonement page |
 | `kanep.es/pilnais` | lolo.id abonement page |
 | `kanep.es/sofasessions` | kanepes.lv/notikumi/sofa-sessions/ |
+| `kanep.es/khans-flesh`  | kanepes.lv/en/notikumi/khans-flesh (EN-only promo) |
 | `kanep.es/donations`    | kanepes.lv/atbalsti/ |
 | `kanep.es/klara`        | Klara safer-space anonymous report form (Notion) |
 | `atbalsti.kanep.es` | kanepes.lv/atbalsti/ (subdomain via Vercel `has` matcher) |
@@ -64,10 +65,14 @@ Build/install commands are empty (redirect-only project, no build needed).
 
 Monthly vinyl listening series at KKC, curated by Jurijs Lapančuks. Free admission.
 
-- **LV page**: `kanepes.lv/notikumi/sofa-sessions/` (WP post ID 2384)
+- **LV page**: `kanepes.lv/notikumi/sofa-sessions/` (WP post ID 2384) — canonical/reference text; EN is a faithful translation of LV (curator credit intentionally dropped from EN to match LV — not a bug if you notice the asymmetry)
 - **EN page**: `kanepes.lv/notikumi/sofa-sessions-en/` (WP post ID 2386)
 - **Short link**: `kanep.es/sofasessions`
-- **Donate button**: links to `/atbalsti/` → EveryPay Sofa Sessions: `https://swedbank.every-pay.eu/lp/eixidnui8j` (LIVE 2026-07-09)
+- **YouTube channel**: `youtube.com/@SofaSessions_KKC` — livestreamed also via `mixcloud.com/live/SofaSessions_KKC`
+- **Donate button**: styled `#ec7136` (KKC brand orange) background, white text, `'BravoRG'` font (site's display face, same look as `.bookingButton` / "DOD MAN VĒL"), uppercase, no `<strong>` needed — BravoRG reads bold on its own.
+  - Links **directly** to EveryPay LinkPay (`https://swedbank.every-pay.eu/lp/eixidnui8j`), bypassing `/atbalsti/` (changed 2026-08-05).
+  - **Routing decision**: QR codes printed for the venue point to `/atbalsti/` (full donation menu, all causes). Social posts / `kanep.es/sofasessions` point to the event page itself, whose button skips straight to payment — no extra step, since the event page is already one hop.
+- **Video section** (added 2026-08-10): grid of the 6 most recent *distinct-date* episodes (plain `<iframe>` embeds, no JS/API key), replacing the old single-video-with-hidden-playlist embed. Video IDs pulled from the channel's public uploads-playlist RSS (`youtube.com/feeds/videos.xml?playlist_id=UUiolqTKFNqaLsTiqg8Xz8Fw`, no auth needed). Below the grid, a link out to the full channel for the complete archive. Script-based gallery widgets (Elfsight, Smash Balloon) were considered and rejected — see "Editing notikumi content" note below.
 
 ## Atbalsti (Donation page)
 
@@ -157,6 +162,24 @@ Key: `~/.ssh/kanepes_do` (ed25519, added 2026-06-05)
 The theme (`kkc2020react`) is a React SPA — `index.php` outputs only a shell HTML with `<div id="root">` and React bundles. React fetches all content via GraphQL (WPGraphQL plugin). WordPress `wp_footer` hooks do NOT work for injecting content.
 
 To inject scripts/HTML on specific pages: modify `index.php` directly using PHP `$_SERVER['REQUEST_URI']` check.
+
+### Editing `notikumi` (event) post content
+
+Even though the frontend is a React SPA, each `notikumi` post's body is plain HTML in `post_content`, editable via the standard WP REST API — no need to touch the theme or rebuild anything:
+
+```bash
+# Read raw (unrendered) content — needs Application Password auth, edit context
+curl -s -u "USERNAME:APP_PASSWORD" "https://kanepes.lv/wp-json/wp/v2/notikumi/{id}?context=edit"
+
+# Write back (send the FULL content field, not a diff)
+curl -s -X POST -u "USERNAME:APP_PASSWORD" -H "Content-Type: application/json; charset=utf-8" \
+  --data-binary @payload.json "https://kanepes.lv/wp-json/wp/v2/notikumi/{id}"
+```
+
+- **Auth**: WP Application Password for user `kaspars.kondratjuks` (wp-admin → Users → profile → Application Passwords). The secret is shown only once at creation — if lost, revoke and create a new one, don't hunt for it in files.
+- **Gotcha — quoting**: the button/link markup uses `style="..."` (double-quoted attribute). Any value that itself needs quotes (e.g. `font-family: "BravoRG"`) MUST use single quotes (`font-family: 'BravoRG'`) — double quotes prematurely close the `style` attribute and silently drop everything after them. This bit us once (2026-08-06): font-family/uppercase/font-size vanished from a button, and WP's editor sanitizer stripped the broken remainder on next manual save.
+- **Gotcha — link color override**: `.single-content-text .telpasDescrWrap a{color:#ec7136!important}` forces link text to brand-orange inside content areas. If a link needs a different (e.g. white) text color, add `!important` to the inline `color` declaration — inline `!important` wins over the class's `!important` because inline specificity is higher.
+- **Why not a no-code widget**: script-tag-based embeds (Elfsight, Smash Balloon, etc.) don't execute when pasted into `post_content`, because React renders it via `dangerouslySetInnerHTML`-style injection and browsers don't run `<script>` tags inserted that way. `<iframe>` tags work fine (no script execution needed). Anything that genuinely needs its own JS to run must go through the `index.php` injection method above (like the lolo widget), not through post content.
 
 ### Lolo Widget (Vasaras Koncerti page)
 
