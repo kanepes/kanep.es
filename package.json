@@ -1,0 +1,13 @@
+{
+  "name": "kanep-es",
+  "private": true,
+  "description": "kanep.es — short links and the ERAF visitor check-in page (kanep.es/apmeklejums)",
+  "type": "commonjs",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node scripts/check-config.js",
+    "build": "node scripts/check-config.js && node scripts/build.js",
+    "qr": "python3 scripts/make-qr.py",
+    "dev": "vercel dev"
+  }
+}

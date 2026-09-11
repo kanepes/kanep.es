@@ -1,0 +1,76 @@
+{
+  "$comment": "Visi teksti un pogas lapai kanep.es/apmeklejums. Labo tikai 'lv'/'en' tekstus un 'enabled'. NEMAINI 'id' vērtības — uz tām balstās Notion un atskaites.",
+  "projectNumber": "4.3.2.0/1/25/A/044",
+  "projectName": {
+    "lv": "KKC – kopienu kultūras centra attīstība sociālajai saliedētībai",
+    "en": "KKC – developing a culture centre for communities and social inclusion"
+  },
+  "links": {
+    "why": "https://kanep.es/kapec",
+    "accessibility": "/apmeklejums/pieklustamiba",
+    "privacy": "/apmeklejums/privatums"
+  },
+  "kiosk": { "resetSeconds": 8 },
+  "questions": {
+    "vecums": {
+      "required": true,
+      "label": { "lv": "Cik tev gadu?", "en": "How old are you?" },
+      "options": [
+        { "id": "0-14",  "notion": "līdz 14", "lv": "līdz 14", "en": "up to 14", "enabled": true },
+        { "id": "15-17", "notion": "15–17",   "lv": "15–17",   "en": "15–17",    "enabled": true },
+        { "id": "18-29", "notion": "18–29",   "lv": "18–29",   "en": "18–29",    "enabled": true },
+        { "id": "30-64", "notion": "30–64",   "lv": "30–64",   "en": "30–64",    "enabled": true },
+        { "id": "65+",   "notion": "65+",     "lv": "65+",     "en": "65+",      "enabled": true }
+      ]
+    },
+    "grupas": {
+      "label": { "lv": "Uz mani attiecas…", "en": "This applies to me…" },
+      "options": [
+        { "id": "invaliditate", "notion": "Invaliditāte",
+          "lv": "Man ir invaliditāte vai funkcionāli traucējumi", "en": "I have a disability or impairment", "enabled": true },
+        { "id": "imigranti", "notion": "Imigranti un bēgļi",
+          "lv": "Esmu imigrants/-e vai bēglis/-e", "en": "I am an immigrant or refugee", "enabled": true },
+        { "id": "iecelojis", "notion": "Imigranti un bēgļi",
+          "lv": "Esmu ieceļojis/-usi Latvijā no citas valsts", "en": "I came to Latvia from another country", "enabled": false,
+          "$comment": "Alternatīvs formulējums tai pašai grupai. Ieslēdzot — izslēdz 'imigranti'." },
+        { "id": "regioni", "notion": "Reģioni",
+          "lv": "Dzīvoju ārpus Rīgas", "en": "I live outside Riga", "enabled": false }
+      ],
+      "none": { "id": "neviena", "lv": "Neviens no šiem", "en": "None of these" }
+    },
+    "lv": {
+      "required": true,
+      "label": { "lv": "Es dzīvoju…", "en": "I live…" },
+      "options": [
+        { "id": "yes", "notion": "Jā", "lv": "Latvijā", "en": "in Latvia" },
+        { "id": "no",  "notion": "Nē", "lv": "Ārpus Latvijas", "en": "outside Latvia" }
+      ]
+    }
+  },
+  "texts": {
+    "pageTitle":   { "lv": "Apmeklējuma atzīmēšana", "en": "Visitor check-in" },
+    "pickTitle":   { "lv": "Kurā pasākumā tu esi?", "en": "Which event are you at?" },
+    "pickToday":   { "lv": "Šodien", "en": "Today" },
+    "pickOther":   { "lv": "Cits pasākums vai cita diena →", "en": "Another event or another day →" },
+    "pickNone":    { "lv": "Šodien nav reģistrēta pasākuma. Pajautā darbiniekam pie ieejas.", "en": "No event is registered for today. Ask a staff member at the entrance." },
+    "changeEvent": { "lv": "Mainīt pasākumu", "en": "Change event" },
+    "title":       { "lv": "Atzīmē, kas attiecas uz tevi", "en": "Tick what applies to you" },
+    "lead":        { "lv": "Var atzīmēt vairākus.", "en": "Pick as many as apply." },
+    "whyLink":     { "lv": "Kāpēc mums tas ir svarīgi", "en": "Why this matters to us" },
+    "submit":      { "lv": "Iesniegt", "en": "Submit" },
+    "errorAge":    { "lv": "Izvēlies savu vecumu.", "en": "Choose your age." },
+    "errorLv":     { "lv": "Atzīmē, vai dzīvo Latvijā.", "en": "Tell us whether you live in Latvia." },
+    "errorNet":    { "lv": "Neizdevās nosūtīt. Atbilde saglabāta telefonā un aizies, kad būs tīkls. Ja steidz — parādi šo ekrānu darbiniekam.", "en": "Could not send. Your answer is saved on this phone and will be sent when there is a connection. In a hurry? Show this screen to a staff member." },
+    "thanksTitle": { "lv": "Paldies!", "en": "Thank you!" },
+    "thanksLead":  { "lv": "Tava atbilde ir saglabāta. Labu pasākumu!", "en": "Your answer is saved. Enjoy the event!" },
+    "another":     { "lv": "Atzīmēt vēl vienu cilvēku", "en": "Check in one more person" },
+    "anotherHint": { "lv": "Ģimenei, bērnam vai pavadonim no tā paša telefona", "en": "For family, a child or a companion from the same phone" },
+    "already":     { "lv": "Tu jau atzīmējies šim pasākumam.", "en": "You have already checked in for this event." },
+    "privacy":     { "lv": "Anonīmi. Netiek saglabāti personas dati, IP adrese vai sīkdatnes.", "en": "Anonymous. No personal data, IP address or cookies are stored." },
+    "funded":      { "lv": "Līdzfinansē Eiropas Savienība", "en": "Co-funded by the European Union" },
+    "footAccess":  { "lv": "Piekļūstamība", "en": "Accessibility" },
+    "footPrivacy": { "lv": "Privātums", "en": "Privacy" },
+    "skip":        { "lv": "Pāriet uz atbildēm", "en": "Skip to answers" },
+    "kioskReset":  { "lv": "Sākt no jauna", "en": "Start over" }
+  }
+}

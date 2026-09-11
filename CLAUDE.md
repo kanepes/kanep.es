@@ -19,17 +19,57 @@ Short-link and landing page domain for Kaņepes Kultūras centrs.
 | `kanep.es/khans-flesh`  | kanepes.lv/en/notikumi/khans-flesh (EN-only promo) |
 | `kanep.es/donations`    | kanepes.lv/atbalsti/ |
 | `kanep.es/klara`        | Klara safer-space anonymous report form (Notion) |
+| `kanep.es/apmeklejums` | **Hosted page** (not a redirect): ERAF visitor check-in — see section below |
+| `kanep.es/apmeklejums/print` | A4 sheet with the QR code for the entrance |
+| `kanep.es/kapec`        | Notion public page "Kāpēc mēs jautājam, kas tu esi?" (explains the check-in) |
 | `atbalsti.kanep.es` | kanepes.lv/atbalsti/ (subdomain via Vercel `has` matcher) |
 
-To add a new short link: edit `redirects` in `vercel.json` → `vercel --prod`.
+To add a new short link: edit `redirects` in `vercel.json` → push (auto-deploy) or `vercel --prod`.
 
 ## Project Structure
 
 ```
 kanep.es/
-├── vercel.json         # Redirects + build config
+├── vercel.json          # redirects, rewrites, headers; outputDirectory = public
+├── package.json         # npm run build = check config + generate public/ from src/
+├── content/config.json  # ALL editable texts/questions for /apmeklejums (no code needed)
+├── src/                 # page templates (apmeklejums, print, pieklustamiba, privatums), app.js, style.css
+├── public/              # served files: assets/ (qr.svg, es-lidzfinanse.svg, nap2027.svg) + generated html (gitignored)
+├── api/                 # Vercel functions: events-today.js, submit.js
+├── lib/                 # config.js, validate.js, store/{index,notion,mock}.js
+├── scripts/             # check-config.js, build.js, dev-server.js, make-qr.py
+├── docs/                # apmeklejums.md (runbook LV), privatums.md, pieklustamiba.md
 └── CLAUDE.md
 ```
+
+**Important:** `outputDirectory` is `public/` — repo files like this CLAUDE.md are no longer served at kanep.es/CLAUDE.md.
+
+## Apmeklējuma uzskaite (ERAF project 4.3.2.0/1/25/A/044) — `kanep.es/apmeklejums`
+
+Anonymous visitor self-identification for the ERAF target groups. One QR code for all events; the page lists
+today's events from Notion, the visitor ticks age band / groups / lives-in-Latvia, answers land in Notion.
+Full runbook (LV, incl. how to edit texts without code and the Vercel/Notion setup): `docs/apmeklejums.md`.
+
+- **Notion DBs** (under ERAF project page `e47ed3a0-b7d9-4799-b156-b435aae8be8b`):
+  - "ERAF pasākumi" — database `9a76a854-1668-4b17-84ae-0406272d84b6`, data source `10a4ca95-ce7e-4fb8-8ed7-cea99d4966c7`.
+    One row per event (`Kods` EP-n auto, `Datums` with time, `Aktīvs`). Rollups: Atbilžu skaits, Bērni, Jaunieši,
+    Invaliditāte, Imigranti un bēgļi, Latvijā %, Aptvērums %, Kioska saite.
+  - "Atbildes (apmeklējums)" — database `bfe8ddb4-2cc5-43bf-8ec1-912de903d1ea`, data source `0f808a5c-ddee-457c-8255-2975ce4c81c3`.
+    One row per answer; no personal data. Formulas Bērns/Jaunietis/… feed the rollups above.
+  - "Kāpēc mēs jautājam, kas tu esi?" — page `3d85c317-1a4a-814f-bb62-fd90587a5948` (must be published to web; `/kapec` redirects to it).
+- **Env vars (Vercel only, never in repo):** `NOTION_TOKEN` (dedicated internal integration shared with the two DBs only),
+  `NOTION_EVENTS_DB`, `NOTION_RESPONSES_DB`, `STORE=notion`.
+- **Questions:** age band (līdz 14 · 15–17 · 18–29 · 30–64 · 65+; Bērni = first two, Jaunieši = 15–17 + 18–29, per the
+  approved application which overlaps 15–17), groups (Invaliditāte, Imigranti un bēgļi, Neviens no šiem), Dzīvoju Latvijā (MK 44.p. ≥85 %).
+  Alternative wording "Esmu ieceļojis/-usi…" is in config as `enabled: false`.
+- **Editing texts:** edit `content/config.json` (GitHub web editor is enough) → push → Vercel rebuilds; a broken JSON fails the
+  build, the live page stays. Never change option `id`/`notion` values.
+- **Kiosk mode:** `?kiosk=1&e=EP-12` (link is in the Notion event row). **No-JS fallback:** plain form POST with a hand-typed code.
+- **Offline:** client queues the answer in localStorage and re-sends on next load.
+- **Local test:** `STORE=mock MOCK_EVENTS=2 node scripts/dev-server.js` → http://localhost:3000/apmeklejums; `npm run build` before.
+- **Publicity:** ES emblem "Līdzfinansē Eiropas Savienība" + NAP 2027 (official SVG from Drive) + project Nr. in the footer of
+  every screen and at the bottom of the A4 sheet. The A4 sheet does not replace the mandatory A3 poster/plāksne at Skolas 15.
+- **Regenerate QR** (only if the URL changes): `pip install qrcode && python3 scripts/make-qr.py`.
 
 ## Hosting
 

@@ -1,15 +1,30 @@
 {
-  "buildCommand": "",
+  "buildCommand": "npm run build",
   "installCommand": "",
-  "outputDirectory": ".",
+  "outputDirectory": "public",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/apmeklejums", "destination": "/apmeklejums.html" },
+    { "source": "/apmeklejums/print", "destination": "/print.html" },
+    { "source": "/apmeklejums/pieklustamiba", "destination": "/pieklustamiba.html" },
+    { "source": "/apmeklejums/privatums", "destination": "/privatums.html" }
+  ],
   "redirects": [
     { "source": "/vasara",       "destination": "https://kanepes.lv/lv/notikumi/vasaras-koncerti-26/", "permanent": false },
     { "source": "/pass",         "destination": "https://lolo.id/events/2e5c50c7-1abe-4ccb-a721-ede0db6c2b0e/", "permanent": false },
     { "source": "/pilnais",      "destination": "https://lolo.id/events/2e5c50c7-1abe-4ccb-a721-ede0db6c2b0e/", "permanent": false },
     { "source": "/sofasessions", "destination": "https://kanepes.lv/notikumi/sofa-sessions/", "permanent": false },
-    { "source": "/khans-flesh", "destination": "https://kanepes.lv/en/notikumi/khans-flesh", "permanent": false },
+    { "source": "/khans-flesh",  "destination": "https://kanepes.lv/en/notikumi/khans-flesh", "permanent": false },
     { "source": "/donations",    "destination": "https://kanepes.lv/atbalsti/", "permanent": false },
-    { "source": "/klara",        "destination": "https://kanepes.notion.site/39a5c3171a4a8085b9e5d0a5f84a388e", "permanent": false }
+    { "source": "/klara",        "destination": "https://kanepes.notion.site/39a5c3171a4a8085b9e5d0a5f84a388e", "permanent": false },
+    { "source": "/kapec",        "destination": "https://kanepes.notion.site/3d85c3171a4a814fbb62fd90587a5948", "permanent": false }
   ],
-  "cleanUrls": true
+  "headers": [
+    { "source": "/api/(.*)", "headers": [ { "key": "Cache-Control", "value": "no-store" } ] },
+    { "source": "/(.*)", "headers": [
+      { "key": "X-Content-Type-Options", "value": "nosniff" },
+      { "key": "Referrer-Policy", "value": "no-referrer" },
+      { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+    ] }
+  ]
 }

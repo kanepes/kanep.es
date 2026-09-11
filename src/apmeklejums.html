@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:,">
+<meta name="referrer" content="no-referrer">
+<title>{{T:pageTitle}} — KKC</title>
+<link rel="stylesheet" href="/style.css">
+<script>window.CONFIG = {{CONFIG_JSON}};</script>
+</head>
+<body>
+<div class="wrap" id="app">
+  <a class="skip" href="#answers" data-t="skip">{{T:skip}}</a>
+  <header class="top">
+    <span class="brand">KKC</span>
+    <div class="lang" role="group" aria-label="Valoda / Language">
+      <button type="button" data-lang="lv" aria-pressed="true">LV</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <!-- Screen: event picker (JS) -->
+  <main id="screen-pick" hidden>
+    <h1 data-t="pickTitle">{{T:pickTitle}}</h1>
+    <p class="lead" id="pick-date"></p>
+    <p class="notice" id="pick-none" hidden data-t="pickNone">{{T:pickNone}}</p>
+    <div id="pick-list" role="list"></div>
+    <button type="button" class="ghost" id="pick-wide" data-t="pickOther">{{T:pickOther}}</button>
+  </main>
+
+  <!-- Screen: form (works without JS: plain POST) -->
+  <main id="screen-form">
+    <form id="form" method="post" action="/api/submit" novalidate>
+      <input type="hidden" name="lang" id="f-lang" value="lv">
+      <input type="hidden" name="channel" id="f-channel" value="telefons">
+      <div class="event" id="event-box" hidden>
+        <span class="when" id="event-when"></span><span id="event-name"></span>
+        <button type="button" id="event-change" data-t="changeEvent">{{T:changeEvent}}</button>
+      </div>
+      <noscript>
+        <label class="notice" style="display:block">Pasākuma kods (no lapas pie ieejas), piem. EP-12:
+          <input name="code" required style="font:inherit;width:100%;min-height:48px;margin-top:6px;border:2px solid var(--line);border-radius:10px;padding:0 12px">
+        </label>
+      </noscript>
+      <input type="hidden" name="code" id="f-code" value="">
+      <h1 data-t="title">{{T:title}}</h1>
+      <p class="lead"><span data-t="lead">{{T:lead}}</span> <a class="why" href="{{LINK_WHY}}" data-t="whyLink">{{T:whyLink}}</a></p>
+      <p class="err" id="err" role="alert" aria-live="assertive"></p>
+      <p class="notice" id="already" hidden data-t="already">{{T:already}}</p>
+      <div id="answers" tabindex="-1"></div>
+      <fieldset id="q-vecums">
+        <legend data-t="label:vecums">{{LABEL_VECUMS}}</legend>
+        <div class="ages">
+{{OPTIONS_VECUMS}}
+        </div>
+      </fieldset>
+      <fieldset id="q-grupas">
+        <legend data-t="label:grupas">{{LABEL_GRUPAS}}</legend>
+{{OPTIONS_GRUPAS}}
+      </fieldset>
+      <fieldset id="q-lv">
+        <legend data-t="label:lv">{{LABEL_LV}}</legend>
+        <div class="seg">
+{{OPTIONS_LV}}
+        </div>
+      </fieldset>
+      <button type="submit" class="primary" id="submit" data-t="submit">{{T:submit}}</button>
+    </form>
+  </main>
+
+  <!-- Screen: thanks (JS or ?done=1) -->
+  <main id="screen-thanks" hidden>
+    <div class="thanks" role="status" aria-live="polite">
+      <div class="tick"><svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      <h1 data-t="thanksTitle">{{T:thanksTitle}}</h1>
+      <p class="lead" data-t="thanksLead">{{T:thanksLead}}</p>
+      <div class="sum" id="sum" hidden></div>
+    </div>
+    <button type="button" class="secondary" id="another"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M18 8v6M15 11h6"/></svg><span data-t="another">{{T:another}}</span></button>
+    <p class="hint" data-t="anotherHint">{{T:anotherHint}}</p>
+  </main>
+
+  <p class="privacy"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span data-t="privacy">{{T:privacy}}</span></p>
+
+  <footer class="funders">
+    <div class="logos">
+      <img class="es" src="/assets/es-lidzfinanse.svg" alt="Eiropas Savienības karogs — Līdzfinansē Eiropas Savienība" width="250" height="60">
+      <img src="/assets/nap2027.svg" alt="Nacionālais attīstības plāns 2027" width="36" height="44">
+    </div>
+    <small>Projekts Nr. {{PROJECT_NUMBER}} “{{PROJECT_NAME}}”</small>
+    <div class="links"><a href="{{LINK_ACCESS}}" data-t="footAccess">{{T:footAccess}}</a><a href="{{LINK_PRIVACY}}" data-t="footPrivacy">{{T:footPrivacy}}</a></div>
+  </footer>
+</div>
+<script src="/app.js" defer></script>
+</body>
+</html>

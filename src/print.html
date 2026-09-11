@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:,">
+<title>Apmeklējuma atzīmēšana — A4 lapa</title>
+<style>
+  @page { size: A4; margin: 15mm; }
+  :root { --ink:#1f1a17; --accent:#ec7136; --line:#cdc4ba; }
+  * { box-sizing:border-box; }
+  html, body { background:#fff; color:var(--ink); margin:0; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  .sheet { width:180mm; min-height:267mm; margin:0 auto; display:flex; flex-direction:column; align-items:center; text-align:center; padding:4mm 0 0; }
+  .brand { font-weight:900; font-size:14pt; letter-spacing:.04em; align-self:flex-start; }
+  h1 { font-size:26pt; line-height:1.15; margin:8mm 0 3mm; max-width:160mm; text-wrap:balance; }
+  h1 .en { display:block; font-size:15pt; font-weight:500; color:#5c534c; margin-top:3mm; }
+  .steps { display:flex; gap:8mm; margin:4mm 0 2mm; font-size:12pt; }
+  .steps div { flex:1; max-width:52mm; }
+  .steps b { display:block; font-size:22pt; color:var(--accent); }
+  .qr { width:78mm; height:78mm; margin:4mm 0 2mm; }
+  .qr img { width:100%; height:100%; display:block; }
+  .url { font-size:20pt; font-weight:900; letter-spacing:.01em; margin:0 0 6mm; }
+  .event { width:160mm; border:2px solid var(--line); border-radius:4mm; padding:4mm 6mm; font-size:13pt; text-align:left; display:flex; gap:4mm; align-items:baseline; }
+  .event span { white-space:nowrap; }
+  .event .line { flex:1; border-bottom:1.5px solid var(--ink); height:8mm; }
+  .privacy { font-size:10.5pt; color:#5c534c; margin:5mm 0 0; max-width:160mm; }
+  .funders { margin-top:auto; width:180mm; border-top:1px solid var(--line); padding-top:4mm; display:flex; flex-direction:column; gap:3mm; align-items:flex-start; text-align:left; }
+  .logos { display:flex; align-items:center; gap:10mm; }
+  .logos img.es { height:22mm; width:auto; }
+  .logos img.nap { height:22mm; width:auto; }
+  .funders small { font-size:9.5pt; color:#5c534c; line-height:1.3; }
+  .toolbar { position:fixed; top:8px; right:8px; font-size:14px; background:#fff; border:1px solid var(--line); border-radius:8px; padding:8px 12px; }
+  @media print { .toolbar { display:none; } .sheet { min-height:auto; } }
+</style>
+</head>
+<body>
+<div class="toolbar">Drukā ar Ctrl/Cmd + P · A4 · 100 % (bez “fit to page”)</div>
+<div class="sheet">
+  <div class="brand">KAŅEPES KULTŪRAS CENTRS</div>
+  <h1>Skenē un atzīmē, kurām grupām piederi.<span class="en">Scan and tick the groups you belong to.</span></h1>
+  <div class="steps">
+    <div><b>1</b>Skenē kodu ar telefonu<br><span style="color:#5c534c">Scan the code</span></div>
+    <div><b>2</b>Atzīmē, kas attiecas uz tevi<br><span style="color:#5c534c">Tick what applies</span></div>
+    <div><b>3</b>Gatavs — 20 sekundes<br><span style="color:#5c534c">Done in 20 seconds</span></div>
+  </div>
+  <div class="qr"><img src="/assets/qr.svg" alt="QR kods, kas atver kanep.es/apmeklejums"></div>
+  <p class="url">kanep.es/apmeklejums</p>
+  <div class="event"><span>Pasākums / Event:</span><span class="line"></span></div>
+  <p class="privacy">Anonīmi — netiek saglabāti personas dati, IP adrese vai sīkdatnes. Palīdz mums veidot pasākumus, kas sasniedz visus.<br>Anonymous — no personal data, IP address or cookies are stored. It helps us make events that reach everyone.</p>
+  <footer class="funders">
+    <div class="logos">
+      <img class="es" src="/assets/es-lidzfinanse.svg" alt="Eiropas Savienības karogs — Līdzfinansē Eiropas Savienība">
+      <img class="nap" src="/assets/nap2027.svg" alt="Nacionālais attīstības plāns 2027">
+    </div>
+    <small>Projekts Nr. {{PROJECT_NUMBER}} “{{PROJECT_NAME}}”. Līdzfinansē Eiropas Savienība.</small>
+  </footer>
+</div>
+</body>
+</html>
