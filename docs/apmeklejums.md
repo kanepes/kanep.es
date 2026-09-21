@@ -1,7 +1,7 @@
 # Apmeklējuma atzīmēšana — rokasgrāmata (kanep.es/apmeklejums)
 
 Projekts Nr. 4.3.2.0/1/25/A/044 “KKC – kopienu kultūras centra attīstība sociālajai saliedētībai”.
-Šis dokuments ir arī projekta **apmeklētāju uzskaites metodika** (pievieno atskaitēm).
+Šis dokuments ir tehniskā dokumentācija. **Lietotāju instrukcija Lindai un partneriem ir Notion:** lapa „Apmeklējuma atzīmēšana — kā to lietot” zem ERAF projekta lapas (sadaļas 1–5 šeit ir tās avots; ja maini procesu, atjauno abus).
 
 ## 1. Kā tas strādā
 
