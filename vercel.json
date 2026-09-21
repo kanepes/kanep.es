@@ -17,7 +17,7 @@
     { "source": "/khans-flesh",  "destination": "https://kanepes.lv/en/notikumi/khans-flesh", "permanent": false },
     { "source": "/donations",    "destination": "https://kanepes.lv/atbalsti/", "permanent": false },
     { "source": "/klara",        "destination": "https://kanepes.notion.site/39a5c3171a4a8085b9e5d0a5f84a388e", "permanent": false },
-    { "source": "/kapec",        "destination": "https://kanepes.notion.site/3d85c3171a4a814fbb62fd90587a5948", "permanent": false }
+    { "source": "/kapec",        "destination": "https://kanepes.notion.site/K-p-c-m-s-jaut-jam-kas-tu-esi-3d85c3171a4a814fbb62fd90587a5948", "permanent": false }
   ],
   "headers": [
     { "source": "/api/(.*)", "headers": [ { "key": "Cache-Control", "value": "no-store" } ] },
