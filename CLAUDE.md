@@ -50,7 +50,8 @@ Anonymous visitor self-identification for the ERAF target groups. One QR code fo
 today's events from Notion, the visitor ticks age band / groups / lives-in-Latvia, answers land in Notion.
 Full runbook (LV, incl. how to edit texts without code and the Vercel/Notion setup): `docs/apmeklejums.md`.
 
-- **Notion DBs** (under ERAF project page `e47ed3a0-b7d9-4799-b156-b435aae8be8b`):
+- **Notion hub page "Apmeklētāju uzskaite"** `3e25c317-1a4a-81fd-8b50-fc881c467741` (under ERAF project page `e47ed3a0-b7d9-4799-b156-b435aae8be8b`) — the user guide for the coordination team; holds everything below plus the partner instruction page `3e25c317-1a4a-815b-a269-e0ae47354438` (published to web) and a mailto share button.
+- **Notion DBs** (under the hub page):
   - "ERAF pasākumi" — database `9a76a854-1668-4b17-84ae-0406272d84b6`, data source `10a4ca95-ce7e-4fb8-8ed7-cea99d4966c7`.
     One row per event (`Kods` EP-n auto, `Datums` with time, `Aktīvs`). Rollups: Atbilžu skaits, Bērni, Jaunieši,
     Invaliditāte, Imigranti un bēgļi, Latvijā %, Aptvērums %, Kioska saite.
