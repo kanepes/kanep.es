@@ -4,10 +4,10 @@
   "outputDirectory": "public",
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/apmeklejums", "destination": "/apmeklejums.html" },
-    { "source": "/apmeklejums/print", "destination": "/print.html" },
-    { "source": "/apmeklejums/pieklustamiba", "destination": "/pieklustamiba.html" },
-    { "source": "/apmeklejums/privatums", "destination": "/privatums.html" }
+    { "source": "/apmeklejums", "destination": "/apmeklejums" },
+    { "source": "/apmeklejums/print", "destination": "/print" },
+    { "source": "/apmeklejums/pieklustamiba", "destination": "/pieklustamiba" },
+    { "source": "/apmeklejums/privatums", "destination": "/privatums" }
   ],
   "redirects": [
     { "source": "/vasara",       "destination": "https://kanepes.lv/lv/notikumi/vasaras-koncerti-26/", "permanent": false },
