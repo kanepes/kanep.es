@@ -22,6 +22,7 @@ Short-link and landing page domain for Kaņepes Kultūras centrs.
 | `kanep.es/apmeklejums` | **Hosted page** (not a redirect): ERAF visitor check-in — see section below |
 | `kanep.es/apmeklejums/print` | A4 sheet with the QR code for the entrance |
 | `kanep.es/kapec`        | Notion public page "Kāpēc mēs jautājam, kas tu esi?" (explains the check-in) |
+| `kanep.es/rmw26`       | **Hosted page**: Riga Music Week Showcase @ KKC (6.11.2026) application — kanepes.lv-styled wrapper around the Notion form embed (`kanepes.notion.site/ebd/0eb2ff20…`; plain notion.site URLs refuse iframing, `/ebd/` allows it). Source `src/rmw26.html`, font `public/assets/fonts/BravoRG.*` |
 | `atbalsti.kanep.es` | kanepes.lv/atbalsti/ (subdomain via Vercel `has` matcher) |
 
 To add a new short link: edit `redirects` in `vercel.json` → push (auto-deploy) or `vercel --prod`.
