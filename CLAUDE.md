@@ -27,6 +27,7 @@ Short-link and landing page domain for Kaņepes Kultūras centrs.
 | `atbalsti.kanep.es` | kanepes.lv/atbalsti/ (subdomain via Vercel `has` matcher) |
 
 To add a new short link: edit `redirects` in `vercel.json` → push (auto-deploy) or `vercel --prod`.
+Push straight to `main` (decided 2026-11-10): sole maintainer, so a PR adds no review. GitHub's "changes through a pull request" rule is bypassed with a warning, and that's expected.
 
 ## Project Structure
 
