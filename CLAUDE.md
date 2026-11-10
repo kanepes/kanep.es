@@ -21,6 +21,7 @@ Short-link and landing page domain for Kaņepes Kultūras centrs.
 | `kanep.es/klara`        | Klara safer-space anonymous report form (Notion) |
 | `kanep.es/apmeklejums` | **Hosted page** (not a redirect): ERAF visitor check-in — see section below |
 | `kanep.es/apmeklejums/print` | A4 sheet with the QR code for the entrance |
+| `kanep.es/eraf`         | kanepes.lv/notikumi/kopienu-kulturas-centrs/ — ERAF 4.3.2.0/1/25/A/044 project page; **QR on the building plāksne** (Skolas 15). Never delete; repoint when the new website launches. Bare URL on purpose (`/lv/…` renders but returns HTTP 404). QR: `qr-codes/eraf.{svg,png}` |
 | `kanep.es/kapec`        | Notion public page "Kāpēc mēs jautājam, kas tu esi?" (explains the check-in) |
 | `kanep.es/rmw26`       | **Hosted page**: Riga Music Week Showcase @ KKC (6.11.2026) application — kanepes.lv-styled wrapper around the Notion form embed (`kanepes.notion.site/ebd/0eb2ff20…`; plain notion.site URLs refuse iframing, `/ebd/` allows it). Source `src/rmw26.html`, font `public/assets/fonts/BravoRG.*` |
 | `atbalsti.kanep.es` | kanepes.lv/atbalsti/ (subdomain via Vercel `has` matcher) |
