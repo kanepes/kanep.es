@@ -24,6 +24,7 @@ Short-link and landing page domain for Kaņepes Kultūras centrs.
 | `kanep.es/eraf`         | kanepes.lv/notikumi/kopienu-kulturas-centrs/ — ERAF 4.3.2.0/1/25/A/044 project page; **QR on the building plāksne** (Skolas 15). Never delete; repoint when the new website launches. Bare URL on purpose (`/lv/…` renders but returns HTTP 404). QR: `qr-codes/eraf.{svg,png}` |
 | `kanep.es/kapec`        | Notion public page "Kāpēc mēs jautājam, kas tu esi?" (explains the check-in) |
 | `kanep.es/rmw26`       | **Hosted page**: Riga Music Week Showcase @ KKC (6.11.2026) application — kanepes.lv-styled wrapper around the Notion form embed (`kanepes.notion.site/ebd/0eb2ff20…`; plain notion.site URLs refuse iframing, `/ebd/` allows it). Source `src/rmw26.html`, font `public/assets/fonts/BravoRG.*` |
+| `kanep.es/sahs`        | **Hosted page** (noindex while draft): Šaha klubs — club description + donate button (cause SAHA_KLUBS) + transparency block, Sofa Sessions-style. Source `src/sahs.html`. Currently a MAKETS (yellow banner, disabled button) until texts + LinkPay URL are approved; then drop banner/noindex, set button href to LinkPay |
 | `atbalsti.kanep.es` | kanepes.lv/atbalsti/ (subdomain via Vercel `has` matcher) |
 
 To add a new short link: edit `redirects` in `vercel.json` → push (auto-deploy) or `vercel --prod`.
@@ -101,7 +102,7 @@ Build/install commands are empty (redirect-only project, no build needed).
 
 - **Org:** github.com/kanepes (created 2026-06-05)
 - **Owner:** kasparkondrat GitHub account
-- **Repo visibility:** Public (required for Vercel Hobby auto-deploy from org repos)
+- **Repo visibility:** Public (required for Vercel Hobby auto-deploy from org repos). **Never commit drafts, internal docs or personal data here** — anything in src/ is readable on GitHub even if the page is "unlisted". Internal docs go to Drive (or private klkc-biedriba).
 - Future KKC web projects should go here, not under kasparkondrat personal
 
 ## Sofa Sessions
