@@ -15,6 +15,7 @@
     { "source": "/pilnais",      "destination": "https://lolo.id/events/2e5c50c7-1abe-4ccb-a721-ede0db6c2b0e/", "permanent": false },
     { "source": "/sofasessions", "destination": "https://kanepes.lv/notikumi/sofa-sessions/", "permanent": false },
     { "source": "/khans-flesh",  "destination": "https://kanepes.lv/en/notikumi/khans-flesh", "permanent": false },
+    { "source": "/sahs",         "destination": "https://kanepes.lv/atbalsti/", "permanent": false },
     { "source": "/donations",    "destination": "https://kanepes.lv/atbalsti/", "permanent": false },
     { "source": "/klara",        "destination": "https://kanepes.notion.site/39a5c3171a4a8085b9e5d0a5f84a388e", "permanent": false },
     { "source": "/eraf",         "destination": "https://kanepes.lv/notikumi/kopienu-kulturas-centrs/", "permanent": false },
@@ -22,6 +23,7 @@
   ],
   "headers": [
     { "source": "/api/(.*)", "headers": [ { "key": "Cache-Control", "value": "no-store" } ] },
+    { "source": "/sahs-w39lh7", "headers": [ { "key": "X-Robots-Tag", "value": "noindex, nofollow" } ] },
     { "source": "/(.*)", "headers": [
       { "key": "X-Content-Type-Options", "value": "nosniff" },
       { "key": "Referrer-Policy", "value": "no-referrer" },

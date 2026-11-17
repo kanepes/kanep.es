@@ -24,6 +24,8 @@ Short-link and landing page domain for Kaņepes Kultūras centrs.
 | `kanep.es/eraf`         | kanepes.lv/notikumi/kopienu-kulturas-centrs/ — ERAF 4.3.2.0/1/25/A/044 project page; **QR on the building plāksne** (Skolas 15). Never delete; repoint when the new website launches. Bare URL on purpose (`/lv/…` renders but returns HTTP 404). QR: `qr-codes/eraf.{svg,png}` |
 | `kanep.es/kapec`        | Notion public page "Kāpēc mēs jautājam, kas tu esi?" (explains the check-in) |
 | `kanep.es/rmw26`       | **Hosted page**: Riga Music Week Showcase @ KKC (6.11.2026) application — kanepes.lv-styled wrapper around the Notion form embed (`kanepes.notion.site/ebd/0eb2ff20…`; plain notion.site URLs refuse iframing, `/ebd/` allows it). Source `src/rmw26.html`, font `public/assets/fonts/BravoRG.*` |
+| `kanep.es/sahs`        | kanepes.lv/atbalsti/ — Šaha klubs mērķziedojums (cause SAHA_KLUBS). Repoint to `#sahs` card / LinkPay once the card is on the WP page |
+| `kanep.es/sahs-w39lh7` | **Hosted, unlisted page** (noindex, not linked): Šaha klubs ziedojumu vadlīnijas / nodomu protokols for the club organizer. Source `src/sahs-w39lh7.html`; master text in klkc-biedriba `projects/ziedojumi-online/docs/saha-klubs/01_…md`. Repo is public → "unlisted", not secret |
 | `atbalsti.kanep.es` | kanepes.lv/atbalsti/ (subdomain via Vercel `has` matcher) |
 
 To add a new short link: edit `redirects` in `vercel.json` → push (auto-deploy) or `vercel --prod`.
