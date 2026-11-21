@@ -7,7 +7,8 @@
     { "source": "/apmeklejums", "destination": "/apmeklejums" },
     { "source": "/apmeklejums/print", "destination": "/print" },
     { "source": "/apmeklejums/pieklustamiba", "destination": "/pieklustamiba" },
-    { "source": "/apmeklejums/privatums", "destination": "/privatums" }
+    { "source": "/apmeklejums/privatums", "destination": "/privatums" },
+    { "source": "/zsv", "destination": "/ziemassvetki" }
   ],
   "redirects": [
     { "source": "/vasara",       "destination": "https://kanepes.lv/lv/notikumi/vasaras-koncerti-26/", "permanent": false },
@@ -23,6 +24,7 @@
   "headers": [
     { "source": "/api/(.*)", "headers": [ { "key": "Cache-Control", "value": "no-store" } ] },
     { "source": "/sahs", "headers": [ { "key": "X-Robots-Tag", "value": "noindex, nofollow" } ] },
+    { "source": "/(ziemassvetki|zsv)", "headers": [ { "key": "X-Robots-Tag", "value": "noindex, nofollow" }, { "key": "Cache-Control", "value": "no-store" } ] },
     { "source": "/(.*)", "headers": [
       { "key": "X-Content-Type-Options", "value": "nosniff" },
       { "key": "Referrer-Policy", "value": "no-referrer" },

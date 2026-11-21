@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="lv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Ziemassvētki Kaņepē — 22.12.2026</title>
+<meta property="og:title" content="Ziemassvētki Kaņepē">
+<meta property="og:description" content="22. decembris · slēgts vakars · ieeja ar ielūgumu">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* A dark notice board in a candle-lit room. Everything on it is a taped paper card: the invitation, the evening's
+     running order, and the jobs anyone may take for an hour (cook, pour, perform). Taking a card = taking part. */
+  @font-face { font-family:"BravoRG"; src:url("/assets/fonts/BravoRG.woff2") format("woff2"), url("/assets/fonts/BravoRG.woff") format("woff"); font-display:swap; }
+  :root {
+    --board:#131211; --line:rgba(237,232,223,.1); --chalk:#ede8df; --dim:rgba(237,232,223,.56); --glow:236,113,54;
+    --ink:#1b1a17; --ink-2:#585349; --rule:rgba(27,26,23,.24);
+    --cream:#ede8df; --blue:#cbdae6; --sage:#c8d6bf; --peach:#efc0a8; --yellow:#ead58a; --rose:#e8c4ca; --red:#b8412a;
+    --accent:#ec7136; --stamp:#c9432a;
+    --sans:"Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono:"Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --hand:"Caveat Brush", "Segoe Script", "Bradley Hand", cursive;
+    --bravo:"BravoRG", "Arial Narrow", sans-serif;
+    --noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .1 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  * { box-sizing:border-box; }
+  html { background:var(--board); }
+  body { margin:0; color:var(--chalk); font-family:var(--sans); font-size:16px; line-height:1.5; min-height:100vh; overflow-x:hidden;
+    background-image:radial-gradient(rgba(237,232,223,.075) 1px, transparent 1.3px); background-size:22px 22px; }
+  body::before { content:""; position:fixed; inset:-10%; z-index:-1; pointer-events:none;
+    background:
+      radial-gradient(36% 28% at 12% 2%, rgba(var(--glow),.2), transparent 70%),
+      radial-gradient(30% 26% at 92% 40%, rgba(var(--glow),.1), transparent 70%),
+      radial-gradient(44% 30% at 40% 104%, rgba(var(--glow),.14), transparent 70%);
+    animation:flicker 5.5s ease-in-out infinite; }
+  @keyframes flicker { 0%,100% { opacity:1 } 22% { opacity:.84 } 31% { opacity:.97 } 58% { opacity:.78 } 73% { opacity:.94 } }
+
+  .wrap { max-width:600px; margin:0 auto; padding:14px 12px 64px; }
+  .mono { font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.11em; text-transform:uppercase; }
+  .hand { font-family:var(--hand); font-weight:400; }
+
+  /* top bar */
+  .top { display:flex; justify-content:space-between; align-items:center; gap:10px; margin:0 2px 14px; }
+  .brand { display:flex; align-items:center; gap:10px; color:var(--chalk); text-decoration:none; min-width:0; }
+  .tile { flex:none; width:34px; height:34px; border-radius:9px; background:var(--cream); display:grid; place-items:center; }
+  .tile svg { width:18px; height:24px; }
+  .brand > span:last-child { min-width:0; }
+  .brand b { display:block; font-weight:600; font-size:15px; line-height:1.2; }
+  .brand small { display:block; color:var(--dim); margin-top:2px; line-height:1.35; }
+  .right { display:flex; align-items:center; gap:10px; flex:none; }
+  .zone > header .days { font-size:24px; line-height:.8; color:var(--accent); white-space:nowrap; transform:rotate(-3deg); }
+  .lang { display:flex; border:1px solid var(--line); border-radius:999px; padding:2px; }
+  .lang button { background:none; border:0; color:var(--dim); padding:6px 9px 5px; border-radius:999px; cursor:pointer; }
+  .lang button[aria-pressed="true"] { background:var(--cream); color:var(--ink); }
+
+  /* zones */
+  .zone { border:1px solid var(--line); border-radius:20px; padding:12px 12px 22px; margin:0 0 14px; background:rgba(237,232,223,.022); }
+  .zone > header { display:flex; align-items:baseline; gap:9px; margin:2px 6px 20px; }
+  .zone > header h2 { font:italic 500 16px var(--sans); margin:0; color:var(--chalk); }
+  .zone > header span { margin-left:auto; color:var(--dim); text-align:right; }
+  .onboard { color:var(--chalk); margin:0 6px 14px; }
+  .onboard small, .fine { display:block; color:var(--dim); font-size:14px; }
+  .onboard small { margin-top:4px; }
+  .onboard.lead { font-size:17px; line-height:1.45; max-width:60ch; }
+  .fine { margin:16px 6px 0; }
+
+  /* paper cards */
+  .card { position:relative; color:var(--ink); background-color:var(--cream); background-image:var(--noise); border-radius:5px; padding:20px 18px 18px; margin:0 0 16px;
+    box-shadow:0 1px 0 rgba(255,255,255,.45) inset, 0 18px 30px -16px rgba(0,0,0,.85), 0 2px 4px rgba(0,0,0,.45);
+    transform:rotate(var(--r, 0deg)); transition:transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s, filter .28s; }
+  .card:last-child { margin-bottom:0; }
+  .blue { background-color:var(--blue); } .sage { background-color:var(--sage); } .peach { background-color:var(--peach); }
+  .yellow { background-color:var(--yellow); } .rose { background-color:var(--rose); }
+  .tape::before { content:""; position:absolute; top:-10px; left:50%; width:78px; height:21px; margin-left:-39px; background:rgba(236,224,180,.6);
+    box-shadow:0 1px 2px rgba(0,0,0,.28); transform:rotate(var(--tr, -3deg)); border-left:1px dashed rgba(0,0,0,.06); border-right:1px dashed rgba(0,0,0,.06); }
+  .card p { margin:0 0 12px; text-wrap:pretty; }
+  .card p:last-child { margin-bottom:0; }
+  .meta { display:flex; justify-content:space-between; align-items:center; gap:8px; color:var(--ink-2); margin:0 0 12px; }
+  .chip { display:inline-block; padding:3px 7px 2px; border-radius:4px; background:rgba(27,26,23,.1); color:var(--ink); white-space:nowrap; }
+  .chip.hot { background:var(--accent); color:#fff; }
+  @media (hover:hover) { .lift:hover { transform:rotate(0deg) translateY(-3px); } }
+  .deal .card { animation:deal .62s cubic-bezier(.2,.9,.25,1.08) backwards; animation-delay:calc(var(--i, 0) * 55ms); }
+  @keyframes deal { from { opacity:0; transform:translate(-22px, 46px) rotate(-9deg); } }
+  @media (prefers-reduced-motion:reduce) { body::before, .deal .card, .stamp { animation:none !important; } .card { transition:none; } }
+
+  /* invitation */
+  .invite { --r:-.9deg; padding:22px 20px 22px; }
+  .cien { display:flex; align-items:baseline; gap:10px; margin:0 0 16px; }
+  .cien span { flex:1; border-bottom:1.5px dotted var(--rule); font-family:var(--hand); font-weight:400; font-size:32px; line-height:1; padding:0 6px 3px; min-height:34px; transform:rotate(-1deg); transform-origin:left bottom; }
+  .invite h1 { font-family:var(--bravo); font-weight:400; text-transform:uppercase; font-size:clamp(34px, 11vw, 50px); line-height:.94; letter-spacing:.01em; margin:0 0 14px; text-wrap:balance; }
+  .invite .lead { font-size:18px; font-weight:500; }
+  .invite .jump { margin-top:18px; }
+  .zone { scroll-margin-top:10px; }
+  .invite .when { font-weight:600; border-top:1px solid var(--rule); padding-top:12px; margin-top:16px; }
+  .sticky { --r:2.2deg; width:min(92%, 400px); margin:-10px 0 4px auto; border-radius:2px; padding:16px 16px 16px; z-index:1; }
+  .sticky .hand { display:block; font-size:28px; line-height:1.05; margin:0 0 6px; }
+  .sticky p { font-size:15px; line-height:1.45; }
+  .keep { --r:-.6deg; font-size:14px; margin-top:16px; }
+  .mylink { display:flex; flex-wrap:wrap; align-items:center; gap:8px 10px; margin:4px 8px 0; }
+  .linkbtn { background:none; border:1px solid var(--line); color:var(--chalk); border-radius:999px; padding:7px 11px 6px; cursor:pointer; }
+  .linkbtn:hover, .linkbtn:focus-visible { border-color:var(--accent); outline:0; }
+  .copy { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:8px; }
+  .copy code { font:12px var(--mono); background:rgba(255,255,255,.45); padding:6px 8px; border-radius:4px; word-break:break-all; }
+
+  /* running order */
+  .pgrid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px 12px; }
+  .pgrid .card { margin:0; padding:14px 13px 13px; }
+  .pgrid .card:last-child:nth-child(odd) { grid-column:1 / -1; }
+  .pgrid .card:nth-child(4n+1) { --r:-1.3deg; } .pgrid .card:nth-child(4n+2) { --r:1deg; } .pgrid .card:nth-child(4n+3) { --r:.8deg; } .pgrid .card:nth-child(4n) { --r:-1deg; }
+  .pgrid .tape::before { width:54px; margin-left:-27px; height:18px; top:-9px; }
+  .pgrid time { font:600 21px var(--mono); letter-spacing:-.01em; }
+  .pgrid b { display:block; font-weight:600; font-size:15.5px; line-height:1.25; margin:8px 0 4px; }
+  .pgrid small { display:block; font-size:13.5px; line-height:1.38; color:var(--ink-2); }
+
+  /* reply */
+  form { margin:0; }
+  fieldset { border:0; margin:0; padding:0; min-width:0; }
+  .ask { --r:.5deg; }
+  .ask h3, .last h3 { font-family:var(--bravo); font-weight:400; text-transform:uppercase; font-size:24px; letter-spacing:.03em; margin:0 0 12px; line-height:1; }
+  .three { display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; }
+  .three label { position:relative; display:block; text-align:center; border:1.5px solid var(--ink); border-radius:6px; padding:14px 4px 11px; font-family:var(--bravo); text-transform:uppercase; font-size:18px; letter-spacing:.03em; cursor:pointer; user-select:none; transition:transform .2s; }
+  .three input, .opt input, .slots input, .pickrow input { position:absolute; opacity:0; pointer-events:none; }
+  .three label:has(input:checked) { background:var(--ink); color:var(--cream); transform:rotate(-2deg) scale(1.03); }
+  .three label:has(input:focus-visible), .opt:has(input:focus-visible), .slots label:has(input:focus-visible), .task:has(.pickrow input:focus-visible) { outline:2px solid var(--accent); outline-offset:2px; }
+  .field { display:block; margin:16px 0 0; }
+  .field > span { display:block; font-weight:600; margin-bottom:2px; }
+  input[type=text], textarea { width:100%; font:inherit; font-family:var(--hand); font-weight:400; font-size:23px; line-height:1.2; color:var(--ink); background:transparent; border:0; border-bottom:1.5px dotted var(--rule); border-radius:0; padding:4px 2px; }
+  input[type=text]::placeholder, textarea::placeholder { font-family:var(--sans); font-weight:400; font-size:15px; color:rgba(27,26,23,.5); }
+  input[type=text]:focus, textarea:focus { outline:0; border-bottom:1.5px solid var(--accent); }
+  textarea { resize:vertical; min-height:36px; display:block; }
+
+  .task { padding:0; filter:saturate(.72) brightness(.9); }
+  .task.mine { filter:none; --r:var(--mr, -1.2deg); }
+  .task.mine::before { content:""; position:absolute; top:-10px; left:26px; width:70px; height:21px; background:rgba(236,224,180,.6); box-shadow:0 1px 2px rgba(0,0,0,.28); transform:rotate(-5deg); }
+  .task:nth-of-type(even) { --mr:1deg; }
+  .pickrow { display:block; padding:16px 16px 15px; cursor:pointer; }
+  .pickrow b { display:block; font-weight:600; font-size:17px; line-height:1.25; }
+  .pickrow small, .hint { display:block; color:var(--ink-2); font-size:14px; line-height:1.4; margin-top:4px; }
+  .state .on, .task.mine .state .off { display:none; }
+  .task.mine .state { background:var(--ink); color:var(--cream); }
+  .task.mine .state .on { display:inline; }
+  .more { padding:0 16px 16px; }
+  .slots { display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; margin-top:8px; }
+  .slots label { position:relative; border:1.5px solid var(--ink); border-radius:6px; padding:9px 6px 7px; text-align:center; cursor:pointer; font:600 16px var(--mono); }
+  .slots label:has(input:checked) { background:var(--ink); color:var(--cream); }
+  .slots label.full { opacity:.36; cursor:not-allowed; text-decoration:line-through; }
+  .slots i { display:block; font-style:normal; font-size:10px; letter-spacing:.22em; margin-top:3px; }
+  .santa { background-color:var(--red); color:#fff3e4; }
+  .santa .meta, .santa small, .santa .hint { color:rgba(255,243,228,.8); }
+  .santa .chip { background:rgba(255,243,228,.18); color:#fff3e4; }
+  .santa.mine .state { background:#fff3e4; color:var(--red); }
+  .santa input[type=text] { color:#fff3e4; border-bottom-color:rgba(255,243,228,.5); }
+  .santa input[type=text]::placeholder { color:rgba(255,243,228,.7); }
+  .santa h3 { font-family:var(--bravo); font-weight:400; text-transform:uppercase; font-size:24px; margin:0 0 12px; line-height:1; }
+  .santa .name { font-family:var(--hand); font-weight:400; font-size:46px; line-height:1; display:block; margin:6px 0 10px; transform:rotate(-2deg); }
+  .santa .btn { background:#fff3e4; color:var(--red); }
+  .last { --r:-.4deg; }
+  .last .field:first-child { margin-top:0; }
+  .opt { position:relative; display:grid; grid-template-columns:26px 1fr; gap:10px; padding:14px 0 4px; cursor:pointer; font-size:15px; }
+  .opt .box { width:22px; height:22px; border:1.5px solid var(--ink); border-radius:4px; display:grid; place-items:center; font-family:var(--hand); font-weight:400; font-size:32px; line-height:0; color:transparent; }
+  .opt:has(input:checked) .box { color:var(--accent); }
+  .btn { display:inline-block; font-family:var(--bravo); text-transform:uppercase; letter-spacing:.04em; font-size:19px; background:var(--accent); color:#fff; border:0; padding:15px 24px 12px; cursor:pointer; border-radius:6px; }
+  .btn:disabled { opacity:.5; cursor:wait; }
+  .btn.ghost { background:transparent; color:var(--ink); border:1.5px solid var(--ink); }
+  .btn.small { font-size:14px; padding:8px 12px 6px; }
+  .msg { margin:12px 0 0 !important; font-weight:600; }
+  .msg.err { color:#a3260f; }
+
+  .done { --r:-.8deg; padding-right:128px; min-height:150px; }
+  .done .hand { font-size:40px; line-height:1.05; display:block; margin-bottom:6px; color:var(--accent); transform:rotate(-2deg); transform-origin:left; }
+  .stamp { position:absolute; top:16px; right:14px; width:104px; height:104px; border-radius:50%; border:3px double var(--stamp); color:var(--stamp); display:grid; place-content:center; text-align:center; gap:2px;
+    transform:rotate(-13deg); opacity:.86; mix-blend-mode:multiply; animation:stamp .5s .45s cubic-bezier(.2,1.4,.4,1) backwards; }
+  .stamp b { font-family:var(--bravo); font-weight:400; text-transform:uppercase; font-size:21px; line-height:1; }
+  .stamp span { font-size:9px; }
+  @keyframes stamp { from { opacity:0; transform:rotate(-30deg) scale(1.9); } }
+  .recap { display:flex; flex-wrap:wrap; gap:6px; margin:12px 0 14px; }
+
+  /* who is coming */
+  .tags { display:flex; flex-wrap:wrap; gap:8px 8px; margin:0 4px 16px; }
+  .tags span { font-weight:600; font-size:14px; line-height:1; padding:7px 11px 6px; border-radius:3px 12px 12px 12px; color:var(--ink); background:var(--cream); box-shadow:0 4px 10px -4px rgba(0,0,0,.7); }
+  .tags span:nth-child(5n+1) { background:var(--peach); } .tags span:nth-child(5n+2) { background:var(--blue); } .tags span:nth-child(5n+3) { background:var(--yellow); }
+  .tags span:nth-child(5n+4) { background:var(--sage); } .tags span:nth-child(5n) { background:var(--rose); }
+  .tags span:nth-child(3n) { transform:rotate(-2deg); } .tags span:nth-child(4n+1) { transform:rotate(1.6deg); }
+  .tally { --r:.7deg; --tr:4deg; width:min(100%, 380px); padding:18px 18px 10px; margin-top:22px; }
+  .tally ul { list-style:none; margin:0; padding:0; }
+  .tally li { display:flex; align-items:baseline; gap:10px; padding:5px 0 6px; border-bottom:1.5px dotted var(--rule); font-size:15px; line-height:1.3; }
+  .tally li:last-child { border-bottom:0; }
+  .tally b { flex:none; min-width:46px; font-family:var(--hand); font-weight:400; font-size:30px; line-height:.9; color:var(--accent); }
+
+  /* door + picker */
+  .names { display:grid; grid-template-columns:repeat(auto-fill, minmax(150px, 1fr)); gap:10px; margin:0 0 4px; }
+  .names button { font:600 15px var(--sans); text-align:left; color:var(--ink); background:var(--cream) var(--noise); border:0; border-radius:4px; padding:11px 12px 10px; cursor:pointer; box-shadow:0 8px 14px -8px rgba(0,0,0,.8); transition:transform .2s; }
+  .names button:nth-child(3n+1) { transform:rotate(-.8deg); } .names button:nth-child(3n) { transform:rotate(.9deg); }
+  .names button:nth-child(4n+2) { background-color:var(--sage); } .names button:nth-child(4n+3) { background-color:var(--peach); } .names button:nth-child(4n) { background-color:var(--blue); }
+  .names button:hover, .names button:focus-visible { transform:rotate(0) translateY(-2px); outline:0; box-shadow:0 0 0 2px var(--accent), 0 8px 14px -8px rgba(0,0,0,.8); }
+  .sure .hand { font-size:34px; line-height:1.05; display:block; margin:0 0 14px; }
+
+  footer { margin-top:26px; color:var(--dim); text-align:center; }
+  [hidden] { display:none !important; }
+
+  @media (min-width:1000px) {
+    .wrap { max-width:1120px; padding:22px 24px 72px; }
+    .cols { display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); gap:16px; align-items:start; }
+    .zone { padding:14px 18px 26px; }
+    .narrow { max-width:600px; margin-left:auto; margin-right:auto; }
+    .invite .jump { display:none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="brand" href="https://kanepes.lv/">
+      <span class="tile"><svg viewBox="0 0 36 48" fill="none" stroke="#1b1a17" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 4 12 15h4L9 26h5L5 39h26L22 26h5L20 15h4L18 4Z"/><path d="M18 39v6"/><circle cx="18" cy="4" r="1.6" fill="#ec7136" stroke="#ec7136"/></svg></span>
+      <span><b data-t="title">Ziemassvētki Kaņepē</b><small class="mono" data-t="sub">22.12.2026 · otrdiena</small></span>
+    </a>
+    <div class="right">
+      <div class="lang" role="group" aria-label="Valoda / Language">
+        <button type="button" class="mono" data-lang="lv" aria-pressed="true">LV</button>
+        <button type="button" class="mono" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="app" aria-live="polite">
+    <section class="zone narrow"><div class="card tape"><p data-t="loading">Meklējam tavu ielūgumu…</p></div></section>
+  </main>
+
+  <footer class="mono"><span data-t="footer">Skolas iela 15, Rīga · slēgts pasākums, ieeja tikai ar ielūgumu</span></footer>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var T = {
+    lv: {
+      title: 'Ziemassvētki Kaņepē', sub: '22.12.2026 · otrdiena', loading: 'Meklējam tavu ielūgumu…',
+      footer: 'Skolas iela 15, Rīga · slēgts pasākums, ieeja tikai ar ielūgumu',
+      days: function (n) { return n > 1 ? 'vēl ' + n + (n % 10 === 1 && n % 100 !== 11 ? ' diena' : ' dienas') : n === 1 ? 'rīt!' : n === 0 ? 'šovakar!' : ''; },
+      cien: 'Cien.',
+      p1: 'Ir pienācis tas īpašais mirklis gadā, kad būt ar savējiem vien.',
+      p2: 'Ziemassvētkus Kaņepē svinam aiz slēgtām durvīm, pieklusinātā gaismā un kopā ar tiem, kas šo māju visu gadu tur pie dzīvības.',
+      p3h: 'Bārmeņiem šovakar brīvs.',
+      p3: 'Mājas svētki, tāpat kā pati Kaņepe, turas uz tiem, kas piedalās. Tāpēc aiz letes, pie plīts un pie pults pa stundai stājamies paši – vai vienkārši baudām vakaru.',
+      whenTeam: 'Tiekamies otrdien, 22. decembrī, plkst. 17:00 Skolas ielā 15. Vispirms tikai komanda, no 19:00 pievienojas viesi.',
+      whenGuest: 'Tiekamies otrdien, 22. decembrī, plkst. 19:00 Skolas ielā 15 — Kaņepes Kultūras centrā.',
+      by: 'Par ierašanos lūdzam paziņot līdz 16. decembrim.',
+      zInv: 'Ielūgums', jump: 'Atbildēt ↓', personal: 'personīgs', tagTeam: 'komanda', take: 'paņemt', mine: 'tavs', until: 'līdz 16.12.',
+      kCook: 'virtuve', kBar: 'bārs', kAct: 'skatuve', kSanta: 'tikai komandai',
+      progH: 'Vakara gaita', draft: 'melnraksts',
+      prog: [
+        ['17:00', 'Komanda sanāk kopā', 'Tikai savējie, durvis vēl ciet.', true],
+        ['18:00', 'Kopā būšana', 'Paldies, runas un slepeno vecīšu dāvanas.', true],
+        ['19:00', 'Durvis vaļā viesiem', 'Vakariņas no AUSTRAS virtuves, sākas priekšnesumi, aiz bāra stājas pirmās maiņas.'],
+        ['21:00', 'Mājas šamaņu rituāls', 'To gatavo bārmeņu komanda. Vairāk neteiksim.'],
+        ['22:00', 'Ugunis pagalmā', 'Vēl saskaņojam ar Krollu.'],
+        ['02:00', 'Finišs', '']
+      ],
+      progNote: 'Programma vēl mainīsies — to veido arī tie, kas piesakās zemāk.',
+      rsvpH: 'Atbildes talons', q: 'Vai būsi?', yes: 'Būšu', maybe: 'Varbūt', no: 'Netikšu',
+      partsH: 'Šovakar māju turam paši. Paņem kartīti.', partsSub: 'Brīva izvēle. Var arī vienkārši izbaudīt vakaru.',
+      cook: 'Gatavošu vakariņas kopā ar AUSTRU', cookHint: 'Jāierodas pirms 19:00, precīzu laiku paziņosim.',
+      bar: 'Stundu nostrādāšu aiz bāra', barHint: 'Kopā ar nejauši izlozētu pārinieku. Jālej dzērieni, kases nav.',
+      pick: 'Izvēlies stundu', free: 'brīvs', full: 'pilns',
+      act: 'Sniegšu priekšnesumu', actHint: 'Līdz vienai stundai: DJ sets, dziesma, instruments vai kas pavisam cits.',
+      actPh: 'Ko rādīsi, cik ilgi, kādu tehniku vajag?',
+      plus: 'Nāku kopā ar', plusPh: 'pavadoņa vārds',
+      santaH: 'Slepenais vecītis', santa: 'Piedalos dāvanu izlozē',
+      santaHint: 'Tikai komandai. 17. decembrī šeit uzzināsi vienu vārdu, kam sarūpēt dāvanu. Līdz 10 €, pašu rokām vai kaut kas labs no mājām, kam laiks pie cita saimnieka.',
+      wishPh: 'Mājiens savam vecītim (nav obligāts)',
+      note: 'Kaut kas, kas mums jāzina?', notePh: 'alerģijas, jautājumi, idejas',
+      show: 'Rādīt manu vārdu citiem ielūgtajiem',
+      send: 'Nosūtīt atbildi', sending: 'Sūtām…',
+      doneYes: 'Tiekamies!', doneMaybe: 'Turam īkšķus!', doneNo: 'Žēl. Nākamgad!',
+      doneSub: 'Atbilde saņemta. To var mainīt līdz 16. decembrim.', edit: 'Mainīt atbildi',
+      rShift: 'Bāra maiņa', rCook: 'Vakariņu gatavošana ar AUSTRU', rAct: 'Priekšnesums', rSanta: 'Slepenais vecītis: piedalos', rPlus: 'Kopā ar',
+      whoH: 'Kas jau nāk', whoEmpty: 'Pagaidām klusums. Tu vari būt pirmais.',
+      nYes: 'apstiprinājuši', nMaybe: 'vēl domā', nBar: 'bāra maiņas aizņemtas', nAct: ['priekšnesums', 'priekšnesumi'], nCook: ['pavārs', 'pavāri'],
+      sDrawnH: 'Tavs slepenais uzdevums', sOpen: 'Atvērt aploksni', sYou: 'Tu esi slepenais vecītis:', sWish: 'Mājiens:', sNoWish: 'Mājiena nav. Uzticies intuīcijai.',
+      sRule: 'Līdz 10 €, pašu rokām vai kaut kas labs no mājām, kam laiks pie cita saimnieka. Dāvanu atnes 22. decembrī uz 17:00 un nevienam nesaki.',
+      sMissed: 'Izloze jau notikusi, un tevis tajā nav. Uzraksti Klaudijai Slackā — atradīsim risinājumu.',
+      sWait: function (n) { return 'Izloze būs 17. decembrī. Pagaidām pieteikušies: ' + n + '.'; },
+      doorH: 'Šis ir slēgts vakars', door: 'Ieeja ar personīgu ielūgumu. Ja tev tāds ir, atver saiti no sava ielūguma vēlreiz.',
+      pickH: 'Čau, komanda!',
+      pickIntro: 'Šis ir tavs ielūgums uz Kaņepes Ziemassvētkiem 22. decembrī. Šeit pasaki, vai būsi, un, ja gribi, piesakies gatavot vakariņas, stundu pastāvēt aiz bāra, uzstāties vai piedalīties slepenajā vecītī.',
+      pickP: 'Atrodi savu vārdu komandas sarakstā. To var izdarīt vienu reizi — pēc tam šī ierīce tevi atcerēsies.',
+      pickAfter: 'Pēc izvēles redzēsi arī savu personīgo saiti. Saglabā to, ja gribi atvērt ielūgumu citā ierīcē.',
+      pickNone: 'Neatrodi sevi, vai tavs vārds jau ir paņemts (piemēram, citā ierīcē)? Uzraksti Klaudijai Slackā, un tavu vārdu atbrīvos.',
+      pickSure: function (n) { return 'Tu esi ' + n + '?'; }, pickYes: 'Jā, tas esmu es', pickNo: 'Nē, atpakaļ',
+      keep: 'Šī ir tava personīgā saite. Saglabā to, ja gribi atvērt ielūgumu citā ierīcē:', keepShort: 'Tava personīgā saite, ja vajag citā ierīcē:', copy: 'Kopēt', copied: 'Nokopēts', share: 'Nosūtīt sev',
+      eUnknown: 'Šī saite neder. Pārbaudi, vai tā nokopēta pilnībā.', eNotOpen: 'Tavs ielūgums vēl ir ceļā. Pamēģini nedaudz vēlāk.',
+      eUp: 'Kaut kas nogāja greizi. Pamēģini vēlreiz pēc brīža.', eSlot: 'Šī stunda tikko aizpildījās. Izvēlies citu.',
+      eShift: 'Izvēlies bāra maiņas stundu.', eRsvp: 'Atzīmē, vai būsi.', eTaken: 'Šo vārdu kāds jau ir paņēmis. Uzraksti Klaudijai Slackā.'
+    },
+    en: {
+      title: 'Christmas at Kaņepe', sub: '22.12.2026 · Tuesday', loading: 'Looking for your invitation…',
+      footer: 'Skolas iela 15, Riga · closed event, invitation only',
+      days: function (n) { return n > 1 ? n + ' days to go' : n === 1 ? 'tomorrow!' : n === 0 ? 'tonight!' : ''; },
+      cien: 'Dear',
+      p1: 'It\'s that time of the year to be just among our own.',
+      p2: 'We celebrate Christmas at Kaņepe behind closed doors, with the lights low, together with the people who keep this house alive all year.',
+      p3h: 'The bartenders have the night off.',
+      p3: 'A house celebration, like Kaņepe itself, runs on the people who take part. So we take over the bar, the kitchen and the decks ourselves, an hour at a time – or simply enjoy the evening.',
+      whenTeam: 'See you on Tuesday, 22 December at 17:00, Skolas iela 15. Team only at first, guests join from 19:00.',
+      whenGuest: 'See you on Tuesday, 22 December at 19:00, Skolas iela 15 — Kaņepes Kultūras centrs.',
+      by: 'Please let us know by 16 December.',
+      zInv: 'Invitation', jump: 'Reply ↓', personal: 'personal', tagTeam: 'team', take: 'take it', mine: 'yours', until: 'by 16 Dec',
+      kCook: 'kitchen', kBar: 'bar', kAct: 'stage', kSanta: 'team only',
+      progH: 'The evening', draft: 'draft',
+      prog: [
+        ['17:00', 'The team gets together', 'Just us, doors still closed.', true],
+        ['18:00', 'Togetherness', 'Thank-yous, speeches and Secret Santa gifts.', true],
+        ['19:00', 'Doors open for guests', 'Dinner from the AUSTRA kitchen, performances start, the first shifts go behind the bar.'],
+        ['21:00', 'Ritual of the house shamans', 'Prepared by the bar team. We say no more.'],
+        ['22:00', 'Fire in the yard', 'Pending confirmation by Mr. Krolls.'],
+        ['02:00', 'Finish', '']
+      ],
+      progNote: 'The programme will change — it is also made by those who sign up below.',
+      rsvpH: 'Reply slip', q: 'Will you come?', yes: 'Yes', maybe: 'Maybe', no: 'No',
+      partsH: 'Tonight we run the house ourselves. Take a card.', partsSub: 'Entirely up to you. You can also simply enjoy the evening.',
+      cook: 'I will cook dinner with AUSTRA', cookHint: 'You need to arrive before 19:00; we will confirm the time.',
+      bar: 'I will work one hour behind the bar', barHint: 'With a randomly drawn partner. You pour drinks, there is no till.',
+      pick: 'Pick an hour', free: 'free', full: 'full',
+      act: 'I will perform', actHint: 'Up to one hour: a DJ set, a song, an instrument or something else entirely.',
+      actPh: 'What, how long, what gear do you need?',
+      plus: 'I am coming with', plusPh: 'name of your +1',
+      santaH: 'Secret Santa', santa: 'Count me in for the gift draw',
+      santaHint: 'Team only. On 17 December you will find one name here to prepare a gift for. Up to 10 €, handmade, or something good from home that is ready for a new owner.',
+      wishPh: 'A hint for your Santa (optional)',
+      note: 'Anything we should know?', notePh: 'allergies, questions, ideas',
+      show: 'Show my name to other invited people',
+      send: 'Send reply', sending: 'Sending…',
+      doneYes: 'See you there!', doneMaybe: 'Fingers crossed!', doneNo: 'Pity. Next year!',
+      doneSub: 'Reply received. You can change it until 16 December.', edit: 'Change reply',
+      rShift: 'Bar shift', rCook: 'Cooking dinner with AUSTRA', rAct: 'Performance', rSanta: 'Secret Santa: I am in', rPlus: 'Coming with',
+      whoH: 'Who is coming', whoEmpty: 'Quiet so far. You can be the first.',
+      nYes: 'confirmed', nMaybe: 'still thinking', nBar: 'bar shifts taken', nAct: ['performance', 'performances'], nCook: ['cook', 'cooks'],
+      sDrawnH: 'Your secret mission', sOpen: 'Open the envelope', sYou: 'You are the Secret Santa of:', sWish: 'Hint:', sNoWish: 'No hint. Trust your intuition.',
+      sRule: 'Up to 10 €, handmade, or something good from home that is ready for a new owner. Bring the gift on 22 December at 17:00 and tell no one.',
+      sMissed: 'The draw has already happened without you. Message Klaudija on Slack and we will sort it out.',
+      sWait: function (n) { return 'The draw is on 17 December. Signed up so far: ' + n + '.'; },
+      doorH: 'This is a closed evening', door: 'Entry by personal invitation. If you have one, open the link from your invitation again.',
+      pickH: 'Hi, team!',
+      pickIntro: 'This is your invitation to Christmas at Kaņepe on 22 December. Tell us here whether you are coming and, if you like, sign up to cook dinner, work an hour behind the bar, perform, or join Secret Santa.',
+      pickP: 'Find your name in the team list. You can do this once — after that this device remembers you.',
+      pickAfter: 'After you pick, you will also see your personal link. Save it if you want to open the invitation on another device.',
+      pickNone: 'Cannot find yourself, or your name is already taken (for example on another device)? Message Klaudija on Slack and your name will be freed.',
+      pickSure: function (n) { return 'You are ' + n + '?'; }, pickYes: 'Yes, that is me', pickNo: 'No, back',
+      keep: 'This is your personal link. Save it if you want to open the invitation on another device:', keepShort: 'Your personal link, in case you need it on another device:', copy: 'Copy', copied: 'Copied', share: 'Send to myself',
+      eUnknown: 'This link does not work. Check that it was copied completely.', eNotOpen: 'Your invitation is still on its way. Try again a little later.',
+      eUp: 'Something went wrong. Please try again in a moment.', eSlot: 'That hour has just filled up. Pick another one.',
+      eShift: 'Pick an hour for your bar shift.', eRsvp: 'Tell us whether you are coming.', eTaken: 'Someone has already taken this name. Message Klaudija on Slack.'
+    }
+  };
+
+  var qs = new URLSearchParams(location.search);
+  var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+  var lang = qs.get('lang') === 'en' || (!qs.get('lang') && store.get('zsv_lang') === 'en') ? 'en' : 'lv';
+  var t = function (key) { return T[lang][key]; };
+  var app = document.getElementById('app');
+  var S = { k: qs.get('k') || store.get('zsv_k') || '', team: qs.get('t') || '', data: null, editing: false, view: 'loading', err: '', fresh: false, dealt: false };
+
+  function el(tag, attrs, kids) {
+    var n = document.createElement(tag);
+    for (var a in attrs || {}) {
+      if (a === 'text') n.textContent = attrs[a];
+      else if (a === 'on') for (var ev in attrs.on) n.addEventListener(ev, attrs.on[ev]);
+      else if (attrs[a] === true) n.setAttribute(a, '');
+      else if (attrs[a] !== false && attrs[a] != null) n.setAttribute(a, attrs[a]);
+    }
+    [].concat(kids || []).forEach(function (c) { if (c) n.appendChild(typeof c === 'string' ? document.createTextNode(c) : c); });
+    return n;
+  }
+  function api(method, body) {
+    var url = '/api/zsv' + (method === 'GET' ? '?' + new URLSearchParams(body) : '');
+    return fetch(url, method === 'GET' ? {} : { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+      .then(function (r) { return r.json().then(function (j) { j._ok = r.ok; return j; }); })
+      .catch(function () { return { error: 'upstream' }; });
+  }
+  var errText = function (code) {
+    return { unknown: t('eUnknown'), not_open: t('eNotOpen'), slot_full: t('eSlot'), shift: t('eShift'), rsvp: t('eRsvp'), taken: t('eTaken') }[code] || t('eUp');
+  };
+
+  function chrome() {
+    document.documentElement.lang = lang;
+    document.title = t('title') + ' — 22.12.2026';
+    document.querySelectorAll('[data-t]').forEach(function (n) { n.textContent = t(n.getAttribute('data-t')); });
+    document.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)); });
+    var d = Math.ceil((Date.UTC(2026, 11, 22) - Date.UTC(new Date().getFullYear(), new Date().getMonth(), new Date().getDate())) / 864e5);
+    S.days = t('days')(d);
+  }
+
+  // ---- board pieces ----
+  function zone(title, note, kids, cls) {
+    return el('section', { class: 'zone' + (cls ? ' ' + cls : '') }, [
+      el('header', {}, [el('h2', { text: title }), typeof note === 'string' ? el('span', { class: 'mono', text: note }) : note])
+    ].concat(kids));
+  }
+  function card(cls, kids, attrs) {
+    var a = { class: 'card ' + cls };
+    for (var k in attrs || {}) a[k] = attrs[k];
+    return el('div', a, kids);
+  }
+  function meta(left, right) {
+    return el('div', { class: 'meta mono' }, [el('span', { text: left }), typeof right === 'string' ? el('span', { text: right }) : right]);
+  }
+
+  // ---- views ----
+  function door(msg) {
+    return zone(t('doorH'), null, [card('tape', [el('p', { text: msg || t('door') })])], 'narrow');
+  }
+
+  function picker() {
+    var list = el('div', { class: 'names' });
+    var sure = card('tape sure', [], { hidden: true });
+    (S.teamList || []).forEach(function (p) {
+      list.appendChild(el('button', { type: 'button', text: p.n, on: { click: function () {
+        list.hidden = true; sure.hidden = false; sure.textContent = '';
+        sure.appendChild(el('span', { class: 'hand', text: t('pickSure')(p.n) }));
+        var yes = el('button', { type: 'button', class: 'btn', text: t('pickYes'), on: { click: function () {
+          yes.disabled = true;
+          api('POST', { t: S.team, pick: p.p }).then(function (j) {
+            if (j.k) { S.k = j.k; S.fresh = true; store.set('zsv_k', j.k); history.replaceState(null, '', location.pathname + '?k=' + j.k + (lang === 'en' ? '&lang=en' : '')); load(); }
+            else { S.err = errText(j.error); start(); }
+          });
+        } } });
+        sure.appendChild(yes);
+        sure.appendChild(document.createTextNode(' '));
+        sure.appendChild(el('button', { type: 'button', class: 'btn ghost', text: t('pickNo'), on: { click: function () { sure.hidden = true; list.hidden = false; } } }));
+      } } }));
+    });
+    return zone(t('pickH'), String((S.teamList || []).length), [
+      el('p', { class: 'onboard lead', text: t('pickIntro') }),
+      el('p', { class: 'onboard' }, [t('pickP'), el('small', { text: t('pickAfter') })]), list, sure,
+      S.err ? el('p', { class: 'fine', style: 'color:#f0a08c', text: S.err }) : null,
+      el('p', { class: 'fine', text: t('pickNone') })
+    ]);
+  }
+
+  function myLink() {
+    var link = location.origin + location.pathname + '?k=' + S.k;
+    return link;
+  }
+  function linkButtons(cls) {
+    var link = myLink();
+    var b = el('button', { type: 'button', class: cls, text: t('copy'), on: { click: function () { if (navigator.clipboard) navigator.clipboard.writeText(link).then(function () { b.textContent = t('copied'); }); } } });
+    var sh = navigator.share ? el('button', { type: 'button', class: cls, text: t('share'), on: { click: function () { navigator.share({ title: t('title'), url: link }).catch(function () {}); } } }) : null;
+    return [b, sh];
+  }
+
+  function invite(me) {
+    var kids = [
+      card('blue tape invite', [
+        meta('KKC · 22.12.2026', me.group === 'team' ? el('span', { class: 'chip hot', text: t('tagTeam') }) : el('span', { class: 'chip', text: t('personal') })),
+        el('div', { class: 'cien' }, [el('b', { text: t('cien') }), el('span', { text: me.call })]),
+        el('h1', { text: t('title') }),
+        el('p', { class: 'lead', text: t('p1') }), el('p', { text: t('p2') }),
+        el('p', { class: 'when', text: me.group === 'team' ? t('whenTeam') : t('whenGuest') }),
+        el('p', { text: t('by') }),
+        (!me.answered || S.editing) ? el('p', { class: 'jump' }, [el('button', { type: 'button', class: 'btn', text: t('jump'), on: { click: function () {
+          var f = document.getElementById('talons'), z = f && f.closest('.zone');
+          if (z) z.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+        } } })]) : null
+      ]),
+      card('yellow sticky', [el('span', { class: 'hand', text: t('p3h') }), el('p', { text: t('p3') })])
+    ];
+    if (S.fresh) kids.push(card('keep', [t('keep'), el('div', { class: 'copy' }, [el('code', { text: myLink() })].concat(linkButtons('btn ghost small')))]));
+    return zone(t('zInv'), S.days ? el('span', { class: 'days hand', text: S.days }) : null, kids);
+  }
+
+  function programme(me) {
+    var papers = ['', 'sage', 'peach', 'blue', 'yellow', 'rose'];
+    var grid = el('div', { class: 'pgrid' });
+    var n = 0;
+    t('prog').forEach(function (r, i) {
+      if (r[3] && me.group !== 'team') return;
+      grid.appendChild(card(papers[i % papers.length] + ' lift' + (n++ % 3 === 0 ? ' tape' : ''), [
+        el('div', { class: 'meta mono', style: 'margin:0' }, [el('time', { text: r[0] }), r[3] ? el('span', { class: 'chip', text: t('tagTeam') }) : null]),
+        el('b', { text: r[1] }), r[2] ? el('small', { text: r[2] }) : null
+      ]));
+    });
+    return zone(t('progH'), t('draft'), [grid, el('p', { class: 'fine', text: t('progNote') })]);
+  }
+
+  function option(name, label, checked) {
+    return el('label', { class: 'opt' }, [el('input', { type: 'checkbox', name: name, checked: !!checked }), el('span', { class: 'box', 'aria-hidden': 'true', text: '✓' }), el('span', { text: label })]);
+  }
+  function task(name, tag, paper, title, hint, checked, more, onChange) {
+    var input = el('input', { type: 'checkbox', name: name, checked: !!checked, on: { change: onChange } });
+    var c = card('task lift ' + paper, [
+      el('label', { class: 'pickrow' }, [input,
+        el('span', { class: 'meta mono' }, [el('span', { text: tag }), el('span', { class: 'chip state' }, [el('span', { class: 'off', text: '+ ' + t('take') }), el('span', { class: 'on', text: '✓ ' + t('mine') })])]),
+        el('b', { text: title }), hint ? el('small', { text: hint }) : null]),
+      more
+    ]);
+    c._in = input; c._more = more;
+    return c;
+  }
+
+  function coupon(me, party) {
+    var form = el('form', { novalidate: true, id: 'talons' });
+    var three = el('div', { class: 'three' });
+    ['yes', 'maybe', 'no'].forEach(function (v) {
+      three.appendChild(el('label', {}, [el('input', { type: 'radio', name: 'rsvp', value: v, checked: me.rsvp === v, on: { change: sync } }), t(v)]));
+    });
+    var plusBox = me.plusAllowed ? el('label', { class: 'field' }, [el('span', { text: t('plus') }), el('input', { type: 'text', name: 'plus', maxlength: '60', placeholder: t('plusPh'), value: me.plus })]) : null;
+    form.appendChild(card('tape ask', [el('h3', { text: t('q') }), three, plusBox]));
+
+    var grid = el('div', { class: 'slots' });
+    (S.data.slots || []).forEach(function (s) {
+      var mine = me.shift === s && me.parts.indexOf('bar') >= 0;
+      var taken = (party.bar[s] || 0) - (mine ? 1 : 0);
+      var full = taken >= party.cap;
+      var dots = ''; for (var i = 0; i < party.cap; i++) dots += i < taken ? '●' : '○';
+      grid.appendChild(el('label', { class: full ? 'full' : '', title: full ? t('full') : t('free') }, [el('input', { type: 'radio', name: 'shift', value: s, checked: mine, disabled: full }), s, el('i', { text: dots })]));
+    });
+    var tasks = [
+      task('cook', t('kCook'), 'sage', t('cook'), t('cookHint'), me.parts.indexOf('cook') >= 0, null, sync),
+      task('bar', t('kBar'), 'peach', t('bar'), t('barHint'), me.parts.indexOf('bar') >= 0, el('div', { class: 'more' }, [el('span', { class: 'hint', text: t('pick') }), grid]), sync),
+      task('act', t('kAct'), 'blue', t('act'), t('actHint'), me.parts.indexOf('act') >= 0, el('div', { class: 'more' }, [el('textarea', { name: 'actText', rows: '1', maxlength: '300', placeholder: t('actPh'), text: me.act })]), sync)
+    ];
+    var santaTask = null;
+    if (S.data.santa && S.data.santa.state === 'open') {
+      santaTask = task('santa', t('santaH'), 'santa', t('santa'), t('santaHint'), me.santa,
+        el('div', { class: 'more' }, [el('input', { type: 'text', name: 'wish', maxlength: '200', placeholder: t('wishPh'), value: me.wish })]), sync);
+      tasks.push(santaTask);
+    }
+    var rest = el('div', {}, [el('p', { class: 'onboard', style: 'margin-top:22px' }, [el('b', { text: t('partsH') }), el('small', { text: t('partsSub') })])].concat(tasks));
+    form.appendChild(rest);
+
+    var send = el('button', { type: 'submit', class: 'btn', style: 'margin-top:14px', text: t('send') });
+    var msg = el('p', { class: 'msg err', hidden: true });
+    form.appendChild(card('last', [
+      el('label', { class: 'field' }, [el('span', { text: t('note') }), el('textarea', { name: 'note', rows: '1', maxlength: '300', placeholder: t('notePh'), text: me.note })]),
+      option('show', t('show'), me.show), send, msg
+    ], { style: 'margin-top:16px' }));
+
+    function val(n) { var f = form.elements[n]; return f ? f.value : ''; }
+    function on(n) { var f = form.elements[n]; return !!(f && f.checked); }
+    function sync() {
+      var r = val('rsvp');
+      rest.hidden = !r || r === 'no';
+      if (plusBox) plusBox.hidden = !r || r === 'no';
+      tasks.forEach(function (c) { c.classList.toggle('mine', c._in.checked); if (c._more) c._more.hidden = !c._in.checked; });
+      if (santaTask) santaTask.hidden = r !== 'yes';
+    }
+    sync();
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      msg.hidden = true;
+      var r = val('rsvp');
+      if (!r) { msg.textContent = t('eRsvp'); msg.hidden = false; return; }
+      var p = ['cook', 'bar', 'act'].filter(on);
+      if (r !== 'no' && on('bar') && !val('shift')) { msg.textContent = t('eShift'); msg.hidden = false; return; }
+      send.disabled = true; send.textContent = t('sending');
+      api('POST', { k: S.k, rsvp: r, parts: p, shift: val('shift'), act: val('actText'), plus: val('plus'), santa: on('santa'), wish: val('wish'), note: val('note'), show: on('show') })
+        .then(function (j) {
+          if (j.me) { S.data = j; S.editing = false; render(); var d = document.getElementById('done'); if (d) d.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+          send.disabled = false; send.textContent = t('send'); msg.textContent = errText(j.error); msg.hidden = false;
+          if (j.error === 'slot_full') load(true);
+        });
+    });
+    return zone(t('rsvpH'), t('until'), [form]);
+  }
+
+  function done(me) {
+    var recap = el('div', { class: 'recap' });
+    var chip = function (s) { recap.appendChild(el('span', { class: 'chip mono', text: s })); };
+    if (me.rsvp !== 'no') {
+      if (me.plus) chip(t('rPlus') + ' ' + me.plus);
+      if (me.parts.indexOf('cook') >= 0) chip('✓ ' + t('kCook'));
+      if (me.parts.indexOf('bar') >= 0) chip('✓ ' + t('kBar') + ' ' + (me.shift || ''));
+      if (me.parts.indexOf('act') >= 0) chip('✓ ' + t('kAct'));
+      if (me.santa) chip('✓ ' + t('santaH'));
+    }
+    return zone(t('rsvpH'), t('until'), [card('tape done', [
+      el('div', { class: 'stamp', 'aria-hidden': 'true' }, [el('b', { text: me.rsvp === 'yes' ? t('yes') : me.rsvp === 'maybe' ? t('maybe') : t('no') }), el('span', { class: 'mono', text: 'KKC · 22.12' })]),
+      el('span', { class: 'hand', text: me.rsvp === 'yes' ? t('doneYes') : me.rsvp === 'maybe' ? t('doneMaybe') : t('doneNo') }),
+      el('p', { text: t('doneSub') }),
+      recap.childNodes.length ? recap : null,
+      el('button', { type: 'button', class: 'btn ghost small', text: t('edit'), on: { click: function () { S.editing = true; render(); } } })
+    ], { id: 'done' })]);
+  }
+
+  function santaCard(s) {
+    if (!s || s.state === 'open') return null;
+    var c = card('santa tape', [el('h3', { text: t('sDrawnH') })], { style: '--r:1deg' });
+    if (s.state === 'missed') c.appendChild(el('p', { text: t('sMissed') }));
+    else {
+      var inside = el('div', { hidden: true }, [
+        el('p', { style: 'margin:0', text: t('sYou') }), el('span', { class: 'name', text: s.to.name }),
+        el('p', { text: s.to.wish ? t('sWish') + ' ' + s.to.wish : t('sNoWish') }), el('p', { class: 'hint', text: t('sRule') })
+      ]);
+      var open = el('button', { type: 'button', class: 'btn', text: t('sOpen'), on: { click: function () { open.hidden = true; inside.hidden = false; } } });
+      c.appendChild(open); c.appendChild(inside);
+    }
+    return zone(t('santaH'), t('kSanta'), [c]);
+  }
+
+  function who(party, s) {
+    var kids = [];
+    if (party.who.length) {
+      var tags = el('div', { class: 'tags' });
+      party.who.forEach(function (p) { tags.appendChild(el('span', { text: p.n })); });
+      kids.push(tags);
+    } else kids.push(el('p', { class: 'onboard', text: t('whoEmpty') }));
+    var taken = 0, total = 0; for (var k in party.bar) { taken += party.bar[k]; total += party.cap; }
+    var one = function (n) { return lang === 'lv' ? n % 10 === 1 && n % 100 !== 11 : n === 1; };
+    var list = el('ul');
+    [[party.maybe, t('nMaybe')], [taken + '/' + total, t('nBar')], [party.acts, t('nAct')[one(party.acts) ? 0 : 1]], [party.cooks, t('nCook')[one(party.cooks) ? 0 : 1]]].forEach(function (n) {
+      list.appendChild(el('li', {}, [el('b', { text: String(n[0]) }), el('span', { text: n[1] })]));
+    });
+    kids.push(card('tape tally', [list]));
+    if (s && s.state === 'open') kids.push(el('p', { class: 'fine', text: t('sWait')(s.count) }));
+    return zone(t('whoH'), party.yes + ' ' + t('nYes'), kids);
+  }
+
+  function render() {
+    chrome();
+    app.textContent = ''; app.className = '';
+    if (S.view === 'door') return app.appendChild(door(S.err));
+    if (S.view === 'picker') return app.appendChild(picker());
+    if (S.view !== 'main') return app.appendChild(el('section', { class: 'zone narrow' }, [card('tape', [el('p', { text: t('loading') })])]));
+    var d = S.data, me = d.me;
+    var a = el('div'), b = el('div');
+    [invite(me), santaCard(d.santa), programme(me)].forEach(function (n) { if (n) a.appendChild(n); });
+    [(me.answered && !S.editing) ? done(me) : coupon(me, d.party), who(d.party, d.santa)].forEach(function (n) { if (n) b.appendChild(n); });
+    app.className = 'cols' + (S.dealt ? '' : ' deal');
+    if (me.group === 'team' && !S.fresh) b.appendChild(el('p', { class: 'fine mylink' }, [el('span', { text: t('keepShort') })].concat(linkButtons('linkbtn mono'))));
+    app.appendChild(a); app.appendChild(b);
+    if (!S.dealt) {
+      S.dealt = true;
+      [].forEach.call(app.querySelectorAll('.card'), function (c, i) { c.style.setProperty('--i', Math.min(i, 12)); });
+      setTimeout(function () { app.classList.remove('deal'); }, 1700);
+    }
+  }
+
+  function load(keepEditing) {
+    api('GET', { k: S.k }).then(function (j) {
+      if (j.me) { S.data = j; S.view = 'main'; store.set('zsv_k', S.k); if (!keepEditing) S.editing = false; }
+      else if (S.team && !qs.get('k')) { S.k = ''; return start(); }
+      else { S.view = 'door'; S.err = errText(j.error); }
+      render();
+    });
+  }
+  function start() {
+    if (S.k) return load();
+    if (S.team) return api('GET', { t: S.team }).then(function (j) {
+      if (j.team) { S.teamList = j.team; S.view = 'picker'; } else { S.view = 'door'; S.err = errText(j.error); }
+      render();
+    });
+    S.view = 'door'; render();
+  }
+
+  document.querySelectorAll('.lang button').forEach(function (b) {
+    b.addEventListener('click', function () { lang = b.getAttribute('data-lang'); store.set('zsv_lang', lang); render(); });
+  });
+  chrome();
+  start();
+})();
+</script>
+</body>
+</html>

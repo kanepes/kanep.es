@@ -25,6 +25,7 @@ Short-link and landing page domain for Kaņepes Kultūras centrs.
 | `kanep.es/kapec`        | Notion public page "Kāpēc mēs jautājam, kas tu esi?" (explains the check-in) |
 | `kanep.es/rmw26`       | **Hosted page**: Riga Music Week Showcase @ KKC (6.11.2026) application — kanepes.lv-styled wrapper around the Notion form embed (`kanepes.notion.site/ebd/0eb2ff20…`; plain notion.site URLs refuse iframing, `/ebd/` allows it). Source `src/rmw26.html`, font `public/assets/fonts/BravoRG.*` |
 | `kanep.es/sahs`        | **Hosted page** (noindex while draft): Šaha klubs — club description + donate button (cause SAHA_KLUBS) + transparency block, Sofa Sessions-style. Source `src/sahs.html`. Currently a MAKETS (yellow banner, disabled button) until texts + LinkPay URL are approved; then drop banner/noindex, set button href to LinkPay |
+| `kanep.es/ziemassvetki` (short: `/zsv`) | **Hosted page** (noindex): KKC Ziemassvētki 22.12.2026 — personal invitation, RSVP, guest bar shifts, performances, team Secret Santa. See section below |
 | `atbalsti.kanep.es` | kanepes.lv/atbalsti/ (subdomain via Vercel `has` matcher) |
 
 To add a new short link: edit `redirects` in `vercel.json` → push (auto-deploy) or `vercel --prod`.
@@ -74,6 +75,33 @@ Full runbook (LV, incl. how to edit texts without code and the Vercel/Notion set
 - **Publicity:** ES emblem "Līdzfinansē Eiropas Savienība" + NAP 2027 (official SVG from Drive) + project Nr. in the footer of
   every screen and at the bottom of the A4 sheet. The A4 sheet does not replace the mandatory A3 poster/plāksne at Skolas 15.
 - **Regenerate QR** (only if the URL changes): `pip install qrcode && python3 scripts/make-qr.py`.
+
+## Ziemassvētki 2026 — `kanep.es/ziemassvetki` (built 2026-11-19; remove after the party)
+
+Closed, invitation-only party page. Files: `src/ziemassvetki.html` (page, LV/EN, no placeholders), `api/zsv.js`, `lib/zsv.js`.
+Look: a dark notice board with taped paper cards (pale blue invitation with the name written in by hand, yellow sticky note,
+job cards you take). Handwriting font is Caveat Brush: plain Caveat puts the macron of "ī" over the next letter.
+
+- **Data:** one Notion database "Ziemassvētki 2026 — viesu saraksts un RSVP" (`41d5c317-1a4a-8190-abcc-ee4fa25f60b2`) inside the
+  PROGRAM event page `40e5c317-1a4a-8000-a1ab-dd85a6bff4e6`. One row = one person; the page writes RSVP, Dalība, Bāra maiņa,
+  Priekšnesums, Slepenais vecītis, Vēlmes, Komentārs, Rādīt sarakstā, Atbildēts, Aizņemts. **No names or emails in this repo.**
+- **Who gets in:** only rows with `Ielūgums` = Apstiprināts or Nosūtīts.
+- **Links:** personal link `?k=<token>`; token = HMAC(`ZSV_SECRET`, Notion page id), never stored. Guests get theirs by email
+  (written to the `Saite` column by the admin action). Team uses one shared link `?t=<ZSV_TEAM_CODE>`: pick your name once
+  (`Aizņemts` gets ticked), after that the browser keeps the personal link and the page always shows it to team members
+  (copy / share). Another device or cleared browser data loses it: untick `Aizņemts` and the person picks again, answers stay.
+- **Secret Santa:** team rows with RSVP = Jā + `Slepenais vecītis`. The draw ticks `Vecīša izlozē`; who gives to whom is NOT
+  stored: it is the cycle of drawn rows sorted by HMAC(`ZSV_SECRET`, id). Unticking `Vecīša izlozē` for a drop-out re-links
+  only their Santa. Changing `ZSV_SECRET` after links went out breaks every link and reshuffles the draw — never rotate it.
+- **Env (Vercel only):** `ZSV_NOTION_TOKEN` (own integration, read + update content, connected to the event page only),
+  `ZSV_GUESTS_DB`, `ZSV_SECRET`, `ZSV_TEAM_CODE`, `ZSV_ADMIN_KEY`, `ZSV_PLUS_ONE` (none | guests | all; default all, decided 20.11.2026).
+- **Admin** (POST `/api/zsv` with `{"admin": KEY, "action": …}`): `status` (counts), `links` (name → personal link),
+  `savelinks` (writes guests' links into the `Saite` column, 15 rows per call — repeat until `remaining` is 0), `draw` (dry run; add `"confirm": true` to run it).
+- **Design review copy:** `python3 scripts/zsv-preview.py <out.html>` builds a self-contained version (made-up people, in-page stand-in
+  for the API, view switcher) that is published as a claude.ai Artifact for comments:
+  https://claude.ai/artifact/QRQ8gsP1myk3QSbq14RpQR — after changing `src/ziemassvetki.html`, rebuild and republish to that URL.
+- **Local preview without Notion:** `npm run build && ZSV_STORE=mock PORT=3939 node scripts/dev-server.js` →
+  `http://127.0.0.1:3939/zsv?t=komanda` (team picker); admin key `admin`.
 
 ## Hosting
 
