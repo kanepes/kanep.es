@@ -248,8 +248,8 @@
       p3: 'Mājas svētki, tāpat kā pati Kaņepe, turas uz tiem, kas piedalās. Tāpēc aiz letes, pie plīts un pie pults aicinām ikkatru pasākuma viesi – pa stundai. Protams, tā ir izvēle, nevis obligāta.',
       whenTeam: 'Tiekamies otrdien, 22. decembrī, plkst. 17:00 Skolas ielā 15. Vispirms tikai komanda, no 19:00 pievienojas viesi. Svinam vismaz līdz 23:00. Vai kas zin, līdz cikiem.',
       whenGuest: 'Tiekamies otrdien, 22. decembrī, plkst. 19:00 Skolas ielā 15 — Kaņepes Kultūras centrā. Svinam vismaz līdz 23:00. Var gadīties ilgāk, kā jau parasti.',
-      by: 'Par ierašanos lūdzam paziņot līdz 16. decembrim.',
-      zInv: 'Ielūgums', jump: 'Atbildēt ↓', personal: 'personīgs', tagTeam: 'komanda', take: 'paņemt', mine: 'tavs', until: 'līdz 16.12.',
+      by: 'Par ierašanos lūdzam paziņot līdz 16. decembrim.', byTeam: 'Par ierašanos lūdzam paziņot līdz 6. decembrim.',
+      zInv: 'Ielūgums', jump: 'Atbildēt ↓', personal: 'personīgs', tagTeam: 'komanda', take: 'paņemt', mine: 'tavs', until: 'līdz 16.12.', untilTeam: 'līdz 6.12.',
       kCook: 'virtuve', kBar: 'bārs', kAct: 'skatuve', kSanta: 'tikai komandai',
       progH: 'Vakara gaita', draft: 'melnraksts',
       prog: [
@@ -307,8 +307,8 @@
       p3: 'A house celebration, like Kaņepe itself, runs on the people who take part. So we invite every guest to take a turn behind the bar, at the stove or at the decks – an hour at a time. Of course, it is a choice, not a must.',
       whenTeam: 'See you on Tuesday, 22 December at 17:00, Skolas iela 15. Team only at first, guests join from 19:00. We celebrate until at least 23:00. Who knows how late after that.',
       whenGuest: 'See you on Tuesday, 22 December at 19:00, Skolas iela 15 — Kaņepes Kultūras centrs. We celebrate until at least 23:00. It may well go on longer, as usual.',
-      by: 'Please let us know by 16 December.',
-      zInv: 'Invitation', jump: 'Reply ↓', personal: 'personal', tagTeam: 'team', take: 'take it', mine: 'yours', until: 'by 16 Dec',
+      by: 'Please let us know by 16 December.', byTeam: 'Please let us know by 6 December.',
+      zInv: 'Invitation', jump: 'Reply ↓', personal: 'personal', tagTeam: 'team', take: 'take it', mine: 'yours', until: 'by 16 Dec', untilTeam: 'by 6 Dec',
       kCook: 'kitchen', kBar: 'bar', kAct: 'stage', kSanta: 'team only',
       progH: 'The evening', draft: 'draft',
       prog: [
@@ -461,7 +461,7 @@
         el('h1', { text: t('title') }),
         el('p', { class: 'lead', text: t('p1') }), el('p', { text: t('p2') }),
         el('p', { class: 'when', text: me.group === 'team' ? t('whenTeam') : t('whenGuest') }),
-        el('p', { text: t('by') }),
+        el('p', { text: me.group === 'team' ? t('byTeam') : t('by') }),
         (!me.answered || S.editing) ? el('p', { class: 'jump' }, [el('button', { type: 'button', class: 'btn', text: t('jump'), on: { click: function () {
           var f = document.getElementById('talons'), z = f && f.closest('.zone');
           if (z) z.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth', block: 'start' });
@@ -566,7 +566,7 @@
           if (j.error === 'slot_full') load(true);
         });
     });
-    return zone(t('rsvpH'), t('until'), [form]);
+    return zone(t('rsvpH'), S.data && S.data.me && S.data.me.group === 'team' ? t('untilTeam') : t('until'), [form]);
   }
 
   function done(me) {
