@@ -6,6 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Ziemassvētki Kaņepē — 22.12.2026</title>
 <meta property="og:title" content="Ziemassvētki Kaņepē">
+<meta property="og:image" content="https://kanep.es/assets/zsv-sniegaviri.jpg">
 <meta property="og:description" content="22. decembris · slēgts vakars · ieeja ar ielūgumu">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,6 +91,7 @@
   .cien { display:flex; align-items:baseline; gap:10px; margin:0 0 16px; }
   .cien span { flex:1; border-bottom:1.5px dotted var(--rule); font-family:var(--hand); font-weight:400; font-size:32px; line-height:1; padding:0 6px 3px; min-height:34px; transform:rotate(-1deg); transform-origin:left bottom; }
   .invite h1 { font-family:var(--bravo); font-weight:400; text-transform:uppercase; font-size:clamp(34px, 11vw, 50px); line-height:.94; letter-spacing:.01em; margin:0 0 14px; text-wrap:balance; }
+  .invite .photo { display:block; width:100%; height:auto; aspect-ratio:5/4; object-fit:cover; object-position:50% 62%; border-radius:3px; margin:2px 0 16px; box-shadow:0 1px 0 rgba(0,0,0,.08); }
   .invite .lead { font-size:18px; font-weight:500; }
   .invite .jump { margin-top:18px; }
   .zone { scroll-margin-top:10px; }
@@ -239,36 +241,36 @@
       title: 'Ziemassvētki Kaņepē', sub: '22.12.2026 · otrdiena', loading: 'Meklējam tavu ielūgumu…',
       footer: 'Skolas iela 15, Rīga · slēgts pasākums, ieeja tikai ar ielūgumu',
       days: function (n) { return n > 1 ? 'vēl ' + n + (n % 10 === 1 && n % 100 !== 11 ? ' diena' : ' dienas') : n === 1 ? 'rīt!' : n === 0 ? 'šovakar!' : ''; },
-      cien: 'Cien.',
-      p1: 'Ir pienācis tas īpašais mirklis gadā, kad būt ar savējiem vien.',
-      p2: 'Ziemassvētkus Kaņepē svinam aiz slēgtām durvīm, pieklusinātā gaismā un kopā ar tiem, kas šo māju visu gadu tur pie dzīvības.',
-      p3h: 'Bārmeņiem šovakar brīvs.',
-      p3: 'Mājas svētki, tāpat kā pati Kaņepe, turas uz tiem, kas piedalās. Tāpēc aiz letes, pie plīts un pie pults pa stundai stājamies paši – vai vienkārši baudām vakaru.',
-      whenTeam: 'Tiekamies otrdien, 22. decembrī, plkst. 17:00 Skolas ielā 15. Vispirms tikai komanda, no 19:00 pievienojas viesi.',
-      whenGuest: 'Tiekamies otrdien, 22. decembrī, plkst. 19:00 Skolas ielā 15 — Kaņepes Kultūras centrā.',
+      cien: 'Cien.', photoAlt: 'Simtiem mazu sniegavīru, cieši kopā',
+      p1: 'Ir pienācis tas īpašais mirklis gadā, kad būt ar savējiem kopā.',
+      p2: 'Ziemassvētkus Kaņepē svinam kopā ar tiem, kas šo māju visu gadu tur pie dzīvības, mūsu draugiem un sadarbības partneriem.',
+      p3h: 'Bārmeņiem šovakar brīvs. BET tas nenozīmē, ka bārs būs ciet… ;)',
+      p3: 'Mājas svētki, tāpat kā pati Kaņepe, turas uz tiem, kas piedalās. Tāpēc aiz letes, pie plīts un pie pults aicinām ikkatru pasākuma viesi – pa stundai. Protams, tā ir izvēle, nevis obligāta.',
+      whenTeam: 'Tiekamies otrdien, 22. decembrī, plkst. 17:00 Skolas ielā 15. Vispirms tikai komanda, no 19:00 pievienojas viesi. Svinam vismaz līdz 23:00. Vai kas zin, līdz cikiem.',
+      whenGuest: 'Tiekamies otrdien, 22. decembrī, plkst. 19:00 Skolas ielā 15 — Kaņepes Kultūras centrā. Svinam vismaz līdz 23:00. Var gadīties ilgāk, kā jau parasti.',
       by: 'Par ierašanos lūdzam paziņot līdz 16. decembrim.',
       zInv: 'Ielūgums', jump: 'Atbildēt ↓', personal: 'personīgs', tagTeam: 'komanda', take: 'paņemt', mine: 'tavs', until: 'līdz 16.12.',
       kCook: 'virtuve', kBar: 'bārs', kAct: 'skatuve', kSanta: 'tikai komandai',
       progH: 'Vakara gaita', draft: 'melnraksts',
       prog: [
-        ['17:00', 'Komanda sanāk kopā', 'Tikai savējie, durvis vēl ciet.', true],
+        ['17:00', 'Komanda sanāk kopā', 'Tikai savējie, durvis pārējiem ciet.', true],
         ['18:00', 'Kopā būšana', 'Paldies, runas un slepeno vecīšu dāvanas.', true],
-        ['19:00', 'Durvis vaļā viesiem', 'Vakariņas no AUSTRAS virtuves, sākas priekšnesumi, aiz bāra stājas pirmās maiņas.'],
+        ['19:00', 'Durvis vaļā viesiem', 'Vakariņu veidošana ar AUSTRAS komandu, sākas priekšnesumi, aiz bāra stājas pirmās viesu maiņas.'],
         ['21:00', 'Mājas šamaņu rituāls', 'To gatavo bārmeņu komanda. Vairāk neteiksim.'],
         ['22:00', 'Ugunis pagalmā', 'Vēl saskaņojam ar Krollu.'],
-        ['02:00', 'Finišs', '']
+        ['23:00', 'Svinam vismaz līdz 23:00', '']
       ],
       progNote: 'Programma vēl mainīsies — to veido arī tie, kas piesakās zemāk.',
-      rsvpH: 'Atbildes talons', q: 'Vai būsi?', yes: 'Būšu', maybe: 'Varbūt', no: 'Netikšu',
-      partsH: 'Šovakar māju turam paši. Paņem kartīti.', partsSub: 'Brīva izvēle. Var arī vienkārši izbaudīt vakaru.',
-      cook: 'Gatavošu vakariņas kopā ar AUSTRU', cookHint: 'Jāierodas pirms 19:00, precīzu laiku paziņosim.',
+      rsvpH: 'Lūdzu, atbildi šeit', q: 'Vai būsi?', yes: 'Būšu', maybe: 'Varbūt', no: 'Netikšu',
+      partsH: 'Izvēlies, kur vēlies piedalīties, būs jautrāk.', partsSub: 'Brīva izvēle. Var arī vienkārši izbaudīt vakaru.',
+      cook: 'Gatavošu vakariņas kopā ar AUSTRU', cookHint: 'Kopā izdomāsiet, ko gatavot un pasniegt viesiem, lai cik dažādas būtu gaumes. Iespējams, būs jāierodas pirms 19:00, precīzu laiku paziņosim.',
       bar: 'Stundu nostrādāšu aiz bāra', barHint: 'Kopā ar nejauši izlozētu pārinieku. Jālej dzērieni, kases nav.',
       pick: 'Izvēlies stundu', free: 'brīvs', full: 'pilns',
       act: 'Sniegšu priekšnesumu', actHint: 'Līdz vienai stundai: DJ sets, dziesma, instruments vai kas pavisam cits.',
       actPh: 'Ko rādīsi, cik ilgi, kādu tehniku vajag?',
       plus: 'Nāku kopā ar', plusPh: 'pavadoņa vārds',
       santaH: 'Slepenais vecītis', santa: 'Piedalos dāvanu izlozē',
-      santaHint: 'Tikai komandai. 17. decembrī šeit uzzināsi vienu vārdu, kam sarūpēt dāvanu. Līdz 10 €, pašu rokām vai kaut kas labs no mājām, kam laiks pie cita saimnieka.',
+      santaHint: 'Tikai komandai. Piesakies līdz 6. decembrim, pēc tam šeit uzzināsi vienu vārdu, kam sarūpēt dāvanu. Līdz 10 €, pašu rokām vai kaut kas labs no mājām, kam laiks pie cita saimnieka.',
       wishPh: 'Mājiens savam vecītim (nav obligāts)',
       note: 'Kaut kas, kas mums jāzina?', notePh: 'alerģijas, jautājumi, idejas',
       show: 'Rādīt manu vārdu citiem ielūgtajiem',
@@ -281,7 +283,7 @@
       sDrawnH: 'Tavs slepenais uzdevums', sOpen: 'Atvērt aploksni', sYou: 'Tu esi slepenais vecītis:', sWish: 'Mājiens:', sNoWish: 'Mājiena nav. Uzticies intuīcijai.',
       sRule: 'Līdz 10 €, pašu rokām vai kaut kas labs no mājām, kam laiks pie cita saimnieka. Dāvanu atnes 22. decembrī uz 17:00 un nevienam nesaki.',
       sMissed: 'Izloze jau notikusi, un tevis tajā nav. Uzraksti Klaudijai Slackā — atradīsim risinājumu.',
-      sWait: function (n) { return 'Izloze būs 17. decembrī. Pagaidām pieteikušies: ' + n + '.'; },
+      sWait: function (n) { return 'Pieteikties var līdz 6. decembrim, tad izlozēsim. Pagaidām pieteikušies: ' + n + '.'; },
       doorH: 'Šis ir slēgts vakars', door: 'Ieeja ar personīgu ielūgumu. Ja tev tāds ir, atver saiti no sava ielūguma vēlreiz.',
       pickH: 'Čau, komanda!',
       pickIntro: 'Šis ir tavs ielūgums uz Kaņepes Ziemassvētkiem 22. decembrī. Šeit pasaki, vai būsi, un, ja gribi, piesakies gatavot vakariņas, stundu pastāvēt aiz bāra, uzstāties vai piedalīties slepenajā vecītī.',
@@ -298,36 +300,36 @@
       title: 'Christmas at Kaņepe', sub: '22.12.2026 · Tuesday', loading: 'Looking for your invitation…',
       footer: 'Skolas iela 15, Riga · closed event, invitation only',
       days: function (n) { return n > 1 ? n + ' days to go' : n === 1 ? 'tomorrow!' : n === 0 ? 'tonight!' : ''; },
-      cien: 'Dear',
-      p1: 'It\'s that time of the year to be just among our own.',
-      p2: 'We celebrate Christmas at Kaņepe behind closed doors, with the lights low, together with the people who keep this house alive all year.',
-      p3h: 'The bartenders have the night off.',
-      p3: 'A house celebration, like Kaņepe itself, runs on the people who take part. So we take over the bar, the kitchen and the decks ourselves, an hour at a time – or simply enjoy the evening.',
-      whenTeam: 'See you on Tuesday, 22 December at 17:00, Skolas iela 15. Team only at first, guests join from 19:00.',
-      whenGuest: 'See you on Tuesday, 22 December at 19:00, Skolas iela 15 — Kaņepes Kultūras centrs.',
+      cien: 'Dear', photoAlt: 'Hundreds of little snowmen, close together',
+      p1: 'It\'s that special moment of the year to be together with our own.',
+      p2: 'We celebrate Christmas at Kaņepe with the people who keep this house alive all year, our friends and our partners.',
+      p3h: 'The bartenders have the night off. BUT that does not mean the bar is closed… ;)',
+      p3: 'A house celebration, like Kaņepe itself, runs on the people who take part. So we invite every guest to take a turn behind the bar, at the stove or at the decks – an hour at a time. Of course, it is a choice, not a must.',
+      whenTeam: 'See you on Tuesday, 22 December at 17:00, Skolas iela 15. Team only at first, guests join from 19:00. We celebrate until at least 23:00. Who knows how late after that.',
+      whenGuest: 'See you on Tuesday, 22 December at 19:00, Skolas iela 15 — Kaņepes Kultūras centrs. We celebrate until at least 23:00. It may well go on longer, as usual.',
       by: 'Please let us know by 16 December.',
       zInv: 'Invitation', jump: 'Reply ↓', personal: 'personal', tagTeam: 'team', take: 'take it', mine: 'yours', until: 'by 16 Dec',
       kCook: 'kitchen', kBar: 'bar', kAct: 'stage', kSanta: 'team only',
       progH: 'The evening', draft: 'draft',
       prog: [
-        ['17:00', 'The team gets together', 'Just us, doors still closed.', true],
+        ['17:00', 'The team gets together', 'Just us, doors closed to everyone else.', true],
         ['18:00', 'Togetherness', 'Thank-yous, speeches and Secret Santa gifts.', true],
-        ['19:00', 'Doors open for guests', 'Dinner from the AUSTRA kitchen, performances start, the first shifts go behind the bar.'],
+        ['19:00', 'Doors open for guests', 'Making dinner with the AUSTRA team, performances start, the first guest shifts go behind the bar.'],
         ['21:00', 'Ritual of the house shamans', 'Prepared by the bar team. We say no more.'],
         ['22:00', 'Fire in the yard', 'Pending confirmation by Mr. Krolls.'],
-        ['02:00', 'Finish', '']
+        ['23:00', 'We celebrate until at least 23:00', '']
       ],
       progNote: 'The programme will change — it is also made by those who sign up below.',
-      rsvpH: 'Reply slip', q: 'Will you come?', yes: 'Yes', maybe: 'Maybe', no: 'No',
-      partsH: 'Tonight we run the house ourselves. Take a card.', partsSub: 'Entirely up to you. You can also simply enjoy the evening.',
-      cook: 'I will cook dinner with AUSTRA', cookHint: 'You need to arrive before 19:00; we will confirm the time.',
+      rsvpH: 'Please reply here', q: 'Will you come?', yes: 'Yes', maybe: 'Maybe', no: 'No',
+      partsH: 'Pick where you want to join in – it is more fun.', partsSub: 'Entirely up to you. You can also simply enjoy the evening.',
+      cook: 'I will cook dinner with AUSTRA', cookHint: 'Together you will decide what to cook and serve, for every kind of taste. You may need to arrive before 19:00; we will confirm the time.',
       bar: 'I will work one hour behind the bar', barHint: 'With a randomly drawn partner. You pour drinks, there is no till.',
       pick: 'Pick an hour', free: 'free', full: 'full',
       act: 'I will perform', actHint: 'Up to one hour: a DJ set, a song, an instrument or something else entirely.',
       actPh: 'What, how long, what gear do you need?',
       plus: 'I am coming with', plusPh: 'name of your +1',
       santaH: 'Secret Santa', santa: 'Count me in for the gift draw',
-      santaHint: 'Team only. On 17 December you will find one name here to prepare a gift for. Up to 10 €, handmade, or something good from home that is ready for a new owner.',
+      santaHint: 'Team only. Sign up by 6 December, then you will find one name here to prepare a gift for. Up to 10 €, handmade, or something good from home that is ready for a new owner.',
       wishPh: 'A hint for your Santa (optional)',
       note: 'Anything we should know?', notePh: 'allergies, questions, ideas',
       show: 'Show my name to other invited people',
@@ -340,7 +342,7 @@
       sDrawnH: 'Your secret mission', sOpen: 'Open the envelope', sYou: 'You are the Secret Santa of:', sWish: 'Hint:', sNoWish: 'No hint. Trust your intuition.',
       sRule: 'Up to 10 €, handmade, or something good from home that is ready for a new owner. Bring the gift on 22 December at 17:00 and tell no one.',
       sMissed: 'The draw has already happened without you. Message Klaudija on Slack and we will sort it out.',
-      sWait: function (n) { return 'The draw is on 17 December. Signed up so far: ' + n + '.'; },
+      sWait: function (n) { return 'Sign up by 6 December, then we draw. Signed up so far: ' + n + '.'; },
       doorH: 'This is a closed evening', door: 'Entry by personal invitation. If you have one, open the link from your invitation again.',
       pickH: 'Hi, team!',
       pickIntro: 'This is your invitation to Christmas at Kaņepe on 22 December. Tell us here whether you are coming and, if you like, sign up to cook dinner, work an hour behind the bar, perform, or join Secret Santa.',
@@ -454,6 +456,7 @@
     var kids = [
       card('blue tape invite', [
         meta('KKC · 22.12.2026', me.group === 'team' ? el('span', { class: 'chip hot', text: t('tagTeam') }) : el('span', { class: 'chip', text: t('personal') })),
+        el('img', { class: 'photo', src: '/assets/zsv-sniegaviri.jpg', alt: t('photoAlt'), width: 640, height: 960, decoding: 'async' }),
         el('div', { class: 'cien' }, [el('b', { text: t('cien') }), el('span', { text: me.call })]),
         el('h1', { text: t('title') }),
         el('p', { class: 'lead', text: t('p1') }), el('p', { text: t('p2') }),
