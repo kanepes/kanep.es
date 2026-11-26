@@ -85,6 +85,8 @@ job cards you take). Handwriting font is Caveat Brush: plain Caveat puts the mac
 - **Data:** one Notion database "Ziemassvētki 2026 — viesu saraksts un RSVP" (`41d5c317-1a4a-8190-abcc-ee4fa25f60b2`) inside the
   PROGRAM event page `40e5c317-1a4a-8000-a1ab-dd85a6bff4e6`. One row = one person; the page writes RSVP, Dalība, Bāra maiņa,
   Priekšnesums, Slepenais vecītis, Vēlmes, Komentārs, Rādīt sarakstā, Atbildēts, Aizņemts. **No names or emails in this repo.**
+- **Bar shifts, kitchen, stage = applications** (since 26.11.2026): no cap, one bar hour per person, the page shows how many
+  applied per hour. Nothing is confirmed until 16.12; the team picks (not disclosed). Planned 2 per hour (maybe 3).
 - **Who gets in:** only rows with `Ielūgums` = Apstiprināts or Nosūtīts.
 - **Links:** personal link `?k=<token>`; token = HMAC(`ZSV_SECRET`, Notion page id), never stored. Guests get theirs by email
   (written to the `Saite` column by the admin action). Team uses one shared link `?t=<ZSV_TEAM_CODE>`: pick your name once

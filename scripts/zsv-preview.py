@@ -102,7 +102,6 @@ mock = r"""
     var me = find(b.k); if (!me) return { error: 'unknown' };
     var coming = b.rsvp !== 'no', parts = coming ? b.parts : [];
     var shift = parts.indexOf('bar') >= 0 ? b.shift : null;
-    if (shift && shift !== me.shift && DB.filter(function (r) { return r !== me && r.rsvp && r.rsvp !== 'no' && r.parts.indexOf('bar') >= 0 && r.shift === shift; }).length >= CAP) return { error: 'slot_full' };
     me.rsvp = b.rsvp; me.parts = parts; me.shift = shift; me.act = parts.indexOf('act') >= 0 ? b.act : ''; me.plus = coming ? b.plus : '';
     me.santa = b.rsvp === 'yes' && me.group === 'team' && !!b.santa; me.wish = me.santa ? b.wish : ''; me.note = b.note; me.show = !!b.show; me.answered = true;
     return viewOf(me);

@@ -148,7 +148,7 @@
   .slots label { position:relative; border:1.5px solid var(--ink); border-radius:6px; padding:9px 6px 7px; text-align:center; cursor:pointer; font:600 16px var(--mono); }
   .slots label:has(input:checked) { background:var(--ink); color:var(--cream); }
   .slots label.full { opacity:.36; cursor:not-allowed; text-decoration:line-through; }
-  .slots i { display:block; font-style:normal; font-size:10px; letter-spacing:.22em; margin-top:3px; }
+  .slots i { display:block; font-style:normal; font-size:11px; font-weight:400; letter-spacing:.04em; margin-top:3px; }
   .santa { background-color:var(--red); color:#fff3e4; }
   .santa .meta, .santa small, .santa .hint { color:rgba(255,243,228,.8); }
   .santa .chip { background:rgba(255,243,228,.18); color:#fff3e4; }
@@ -249,7 +249,7 @@
       whenTeam: 'Tiekamies otrdien, 22. decembrī, plkst. 17:00 Skolas ielā 15. Vispirms tikai komanda, no 19:00 pievienojas viesi. Svinam vismaz līdz 23:00. Vai kas zin, līdz cikiem.',
       whenGuest: 'Tiekamies otrdien, 22. decembrī, plkst. 19:00 Skolas ielā 15 — Kaņepes Kultūras centrā. Svinam vismaz līdz 23:00. Var gadīties ilgāk, kā jau parasti.',
       by: 'Par ierašanos lūdzam paziņot līdz 16. decembrim.', byTeam: 'Par ierašanos lūdzam paziņot līdz 6. decembrim.',
-      zInv: 'Ielūgums', jump: 'Atbildēt ↓', personal: 'personīgs', tagTeam: 'komanda', take: 'paņemt', mine: 'tavs', until: 'līdz 16.12.', untilTeam: 'līdz 6.12.',
+      zInv: 'Ielūgums', jump: 'Atbildēt ↓', personal: 'personīgs', tagTeam: 'komanda', take: 'pieteikties', mine: 'pieteicies', until: 'līdz 16.12.', untilTeam: 'līdz 6.12.',
       kCook: 'virtuve', kBar: 'bārs', kAct: 'skatuve', kSanta: 'tikai komandai',
       progH: 'Vakara gaita', draft: 'melnraksts',
       prog: [
@@ -262,10 +262,10 @@
       ],
       progNote: 'Programma vēl mainīsies — to veido arī tie, kas piesakās zemāk.',
       rsvpH: 'Lūdzu, atbildi šeit', q: 'Vai būsi?', yes: 'Būšu', maybe: 'Varbūt', no: 'Netikšu',
-      partsH: 'Izvēlies, kur vēlies piedalīties, būs jautrāk.', partsSub: 'Brīva izvēle. Var arī vienkārši izbaudīt vakaru.',
+      partsH: 'Izvēlies, kur vēlies piedalīties, būs jautrāk.', partsSub: 'Brīva izvēle. Var arī vienkārši izbaudīt vakaru. Šie ir pieteikumi: kurš ko darīs, apstiprināsim līdz 16. decembrim.',
       cook: 'Gatavošu vakariņas kopā ar AUSTRU', cookHint: 'Kopā izdomāsiet, ko gatavot un pasniegt viesiem, lai cik dažādas būtu gaumes. Iespējams, būs jāierodas pirms 19:00, precīzu laiku paziņosim.',
       bar: 'Stundu nostrādāšu aiz bāra', barHint: 'Kopā ar nejauši izlozētu pārinieku. Jālej dzērieni, kases nav.',
-      pick: 'Izvēlies stundu', free: 'brīvs', full: 'pilns',
+      pick: 'Piesakies uz vienu stundu', free: 'brīvs', full: 'pilns', applied: 'piet.',
       act: 'Sniegšu priekšnesumu', actHint: 'Līdz vienai stundai: DJ sets, dziesma, instruments vai kas pavisam cits.',
       actPh: 'Ko rādīsi, cik ilgi, kādu tehniku vajag?',
       plus: 'Nāku kopā ar', plusPh: 'pavadoņa vārds',
@@ -276,10 +276,10 @@
       show: 'Rādīt manu vārdu citiem ielūgtajiem',
       send: 'Nosūtīt atbildi', sending: 'Sūtām…',
       doneYes: 'Tiekamies!', doneMaybe: 'Turam īkšķus!', doneNo: 'Žēl. Nākamgad!',
-      doneSub: 'Atbilde saņemta. To var mainīt līdz 16. decembrim.', edit: 'Mainīt atbildi',
+      doneSub: 'Atbilde saņemta. To var mainīt līdz 16. decembrim.', doneParts: 'Tavi pieteikumi. Kurš ko darīs, apstiprināsim līdz 16. decembrim.', edit: 'Mainīt atbildi',
       rShift: 'Bāra maiņa', rCook: 'Vakariņu gatavošana ar AUSTRU', rAct: 'Priekšnesums', rSanta: 'Slepenais vecītis: piedalos', rPlus: 'Kopā ar',
       whoH: 'Kas jau nāk', whoEmpty: 'Pagaidām klusums. Tu vari būt pirmais.',
-      nYes: 'apstiprinājuši', nMaybe: 'vēl domā', nBar: 'bāra maiņas aizņemtas', nAct: ['priekšnesums', 'priekšnesumi'], nCook: ['pavārs', 'pavāri'],
+      nYes: 'apstiprinājuši', nMaybe: 'vēl domā', nBar: 'pieteikušies bāram', nAct: ['priekšnesums', 'priekšnesumi'], nCook: ['pavārs', 'pavāri'],
       sDrawnH: 'Tavs slepenais uzdevums', sOpen: 'Atvērt aploksni', sYou: 'Tu esi slepenais vecītis:', sWish: 'Mājiens:', sNoWish: 'Mājiena nav. Uzticies intuīcijai.',
       sRule: 'Līdz 10 €, pašu rokām vai kaut kas labs no mājām, kam laiks pie cita saimnieka. Dāvanu atnes 22. decembrī uz 17:00 un nevienam nesaki.',
       sMissed: 'Izloze jau notikusi, un tevis tajā nav. Uzraksti Klaudijai Slackā — atradīsim risinājumu.',
@@ -308,7 +308,7 @@
       whenTeam: 'See you on Tuesday, 22 December at 17:00, Skolas iela 15. Team only at first, guests join from 19:00. We celebrate until at least 23:00. Who knows how late after that.',
       whenGuest: 'See you on Tuesday, 22 December at 19:00, Skolas iela 15 — Kaņepes Kultūras centrs. We celebrate until at least 23:00. It may well go on longer, as usual.',
       by: 'Please let us know by 16 December.', byTeam: 'Please let us know by 6 December.',
-      zInv: 'Invitation', jump: 'Reply ↓', personal: 'personal', tagTeam: 'team', take: 'take it', mine: 'yours', until: 'by 16 Dec', untilTeam: 'by 6 Dec',
+      zInv: 'Invitation', jump: 'Reply ↓', personal: 'personal', tagTeam: 'team', take: 'apply', mine: 'applied', until: 'by 16 Dec', untilTeam: 'by 6 Dec',
       kCook: 'kitchen', kBar: 'bar', kAct: 'stage', kSanta: 'team only',
       progH: 'The evening', draft: 'draft',
       prog: [
@@ -321,10 +321,10 @@
       ],
       progNote: 'The programme will change — it is also made by those who sign up below.',
       rsvpH: 'Please reply here', q: 'Will you come?', yes: 'Yes', maybe: 'Maybe', no: 'No',
-      partsH: 'Pick where you want to join in – it is more fun.', partsSub: 'Entirely up to you. You can also simply enjoy the evening.',
+      partsH: 'Pick where you want to join in – it is more fun.', partsSub: 'Entirely up to you. You can also simply enjoy the evening. These are applications: we will confirm who does what by 16 December.',
       cook: 'I will cook dinner with AUSTRA', cookHint: 'Together you will decide what to cook and serve, for every kind of taste. You may need to arrive before 19:00; we will confirm the time.',
       bar: 'I will work one hour behind the bar', barHint: 'With a randomly drawn partner. You pour drinks, there is no till.',
-      pick: 'Pick an hour', free: 'free', full: 'full',
+      pick: 'Apply for one hour', free: 'free', full: 'full', applied: 'applied',
       act: 'I will perform', actHint: 'Up to one hour: a DJ set, a song, an instrument or something else entirely.',
       actPh: 'What, how long, what gear do you need?',
       plus: 'I am coming with', plusPh: 'name of your +1',
@@ -335,10 +335,10 @@
       show: 'Show my name to other invited people',
       send: 'Send reply', sending: 'Sending…',
       doneYes: 'See you there!', doneMaybe: 'Fingers crossed!', doneNo: 'Pity. Next year!',
-      doneSub: 'Reply received. You can change it until 16 December.', edit: 'Change reply',
+      doneSub: 'Reply received. You can change it until 16 December.', doneParts: 'Your applications. We will confirm who does what by 16 December.', edit: 'Change reply',
       rShift: 'Bar shift', rCook: 'Cooking dinner with AUSTRA', rAct: 'Performance', rSanta: 'Secret Santa: I am in', rPlus: 'Coming with',
       whoH: 'Who is coming', whoEmpty: 'Quiet so far. You can be the first.',
-      nYes: 'confirmed', nMaybe: 'still thinking', nBar: 'bar shifts taken', nAct: ['performance', 'performances'], nCook: ['cook', 'cooks'],
+      nYes: 'confirmed', nMaybe: 'still thinking', nBar: 'applied for the bar', nAct: ['performance', 'performances'], nCook: ['cook', 'cooks'],
       sDrawnH: 'Your secret mission', sOpen: 'Open the envelope', sYou: 'You are the Secret Santa of:', sWish: 'Hint:', sNoWish: 'No hint. Trust your intuition.',
       sRule: 'Up to 10 €, handmade, or something good from home that is ready for a new owner. Bring the gift on 22 December at 17:00 and tell no one.',
       sMissed: 'The draw has already happened without you. Message Klaudija on Slack and we will sort it out.',
@@ -514,10 +514,9 @@
     var grid = el('div', { class: 'slots' });
     (S.data.slots || []).forEach(function (s) {
       var mine = me.shift === s && me.parts.indexOf('bar') >= 0;
-      var taken = (party.bar[s] || 0) - (mine ? 1 : 0);
-      var full = taken >= party.cap;
-      var dots = ''; for (var i = 0; i < party.cap; i++) dots += i < taken ? '●' : '○';
-      grid.appendChild(el('label', { class: full ? 'full' : '', title: full ? t('full') : t('free') }, [el('input', { type: 'radio', name: 'shift', value: s, checked: mine, disabled: full }), s, el('i', { text: dots })]));
+      var others = Math.max(0, (party.bar[s] || 0) - (mine ? 1 : 0));
+      var tag = others ? others + ' ' + t('applied') : t('free');
+      grid.appendChild(el('label', { title: tag }, [el('input', { type: 'radio', name: 'shift', value: s, checked: mine }), s, el('i', { text: tag })]));
     });
     var tasks = [
       task('cook', t('kCook'), 'sage', t('cook'), t('cookHint'), me.parts.indexOf('cook') >= 0, null, sync),
@@ -584,6 +583,7 @@
       el('span', { class: 'hand', text: me.rsvp === 'yes' ? t('doneYes') : me.rsvp === 'maybe' ? t('doneMaybe') : t('doneNo') }),
       el('p', { text: t('doneSub') }),
       recap.childNodes.length ? recap : null,
+      recap.childNodes.length && me.parts.length ? el('p', { class: 'hint', text: t('doneParts') }) : null,
       el('button', { type: 'button', class: 'btn ghost small', text: t('edit'), on: { click: function () { S.editing = true; render(); } } })
     ], { id: 'done' })]);
   }
@@ -610,10 +610,10 @@
       party.who.forEach(function (p) { tags.appendChild(el('span', { text: p.n })); });
       kids.push(tags);
     } else kids.push(el('p', { class: 'onboard', text: t('whoEmpty') }));
-    var taken = 0, total = 0; for (var k in party.bar) { taken += party.bar[k]; total += party.cap; }
+    var taken = 0; for (var k in party.bar) taken += party.bar[k] || 0;
     var one = function (n) { return lang === 'lv' ? n % 10 === 1 && n % 100 !== 11 : n === 1; };
     var list = el('ul');
-    [[party.maybe, t('nMaybe')], [taken + '/' + total, t('nBar')], [party.acts, t('nAct')[one(party.acts) ? 0 : 1]], [party.cooks, t('nCook')[one(party.cooks) ? 0 : 1]]].forEach(function (n) {
+    [[party.maybe, t('nMaybe')], [taken, t('nBar')], [party.acts, t('nAct')[one(party.acts) ? 0 : 1]], [party.cooks, t('nCook')[one(party.cooks) ? 0 : 1]]].forEach(function (n) {
       list.appendChild(el('li', {}, [el('b', { text: String(n[0]) }), el('span', { text: n[1] })]));
     });
     kids.push(card('tape tally', [list]));
