@@ -262,7 +262,7 @@
       ],
       progNote: 'Programma vēl mainīsies — to veido arī tie, kas piesakās zemāk.',
       rsvpH: 'Lūdzu, atbildi šeit', q: 'Vai būsi?', yes: 'Būšu', maybe: 'Varbūt', no: 'Netikšu',
-      partsH: 'Izvēlies, kur vēlies piedalīties, būs jautrāk.', partsSub: 'Brīva izvēle. Var arī vienkārši izbaudīt vakaru. Šie ir pieteikumi: kurš ko darīs, apstiprināsim līdz 16. decembrim.',
+      partsH: 'Izvēlies, kur vēlies piedalīties, būs jautrāk.', partsSub: 'Brīva izvēle. Var arī vienkārši izbaudīt vakaru. Šie ir pieteikumi: pieteikties var līdz 16. decembrim, tad izvēlēsimies un paziņosim.', partsClosed: 'Pieteikšanās virtuvei, bāram un skatuvei noslēdzās 16. decembrī. Kurš ko darīs, paziņosim.',
       cook: 'Gatavošu vakariņas kopā ar AUSTRU', cookHint: 'Kopā izdomāsiet, ko gatavot un pasniegt viesiem, lai cik dažādas būtu gaumes. Iespējams, būs jāierodas pirms 19:00, precīzu laiku paziņosim.',
       bar: 'Stundu nostrādāšu aiz bāra', barHint: 'Kopā ar nejauši izlozētu pārinieku. Jālej dzērieni, kases nav.',
       pick: 'Piesakies uz vienu stundu', free: 'brīvs', full: 'pilns', applied: 'piet.',
@@ -276,7 +276,7 @@
       show: 'Rādīt manu vārdu citiem ielūgtajiem',
       send: 'Nosūtīt atbildi', sending: 'Sūtām…',
       doneYes: 'Tiekamies!', doneMaybe: 'Turam īkšķus!', doneNo: 'Žēl. Nākamgad!',
-      doneSub: 'Atbilde saņemta. To var mainīt līdz 16. decembrim.', doneParts: 'Tavi pieteikumi. Kurš ko darīs, apstiprināsim līdz 16. decembrim.', edit: 'Mainīt atbildi',
+      doneSub: 'Atbilde saņemta. To var mainīt līdz 16. decembrim.', doneParts: 'Tavi pieteikumi. Pieteikties var līdz 16. decembrim, tad izvēlēsimies un paziņosim.', edit: 'Mainīt atbildi',
       rShift: 'Bāra maiņa', rCook: 'Vakariņu gatavošana ar AUSTRU', rAct: 'Priekšnesums', rSanta: 'Slepenais vecītis: piedalos', rPlus: 'Kopā ar',
       whoH: 'Kas jau nāk', whoEmpty: 'Pagaidām klusums. Tu vari būt pirmais.',
       nYes: 'apstiprinājuši', nMaybe: 'vēl domā', nBar: 'pieteikušies bāram', nAct: ['priekšnesums', 'priekšnesumi'], nCook: ['pavārs', 'pavāri'],
@@ -321,7 +321,7 @@
       ],
       progNote: 'The programme will change — it is also made by those who sign up below.',
       rsvpH: 'Please reply here', q: 'Will you come?', yes: 'Yes', maybe: 'Maybe', no: 'No',
-      partsH: 'Pick where you want to join in – it is more fun.', partsSub: 'Entirely up to you. You can also simply enjoy the evening. These are applications: we will confirm who does what by 16 December.',
+      partsH: 'Pick where you want to join in – it is more fun.', partsSub: 'Entirely up to you. You can also simply enjoy the evening. These are applications: you can apply until 16 December, then we choose and let you know.', partsClosed: 'Applications for the kitchen, bar and stage closed on 16 December. We will let you know who does what.',
       cook: 'I will cook dinner with AUSTRA', cookHint: 'Together you will decide what to cook and serve, for every kind of taste. You may need to arrive before 19:00; we will confirm the time.',
       bar: 'I will work one hour behind the bar', barHint: 'With a randomly drawn partner. You pour drinks, there is no till.',
       pick: 'Apply for one hour', free: 'free', full: 'full', applied: 'applied',
@@ -335,7 +335,7 @@
       show: 'Show my name to other invited people',
       send: 'Send reply', sending: 'Sending…',
       doneYes: 'See you there!', doneMaybe: 'Fingers crossed!', doneNo: 'Pity. Next year!',
-      doneSub: 'Reply received. You can change it until 16 December.', doneParts: 'Your applications. We will confirm who does what by 16 December.', edit: 'Change reply',
+      doneSub: 'Reply received. You can change it until 16 December.', doneParts: 'Your applications. You can apply until 16 December, then we choose and let you know.', edit: 'Change reply',
       rShift: 'Bar shift', rCook: 'Cooking dinner with AUSTRA', rAct: 'Performance', rSanta: 'Secret Santa: I am in', rPlus: 'Coming with',
       whoH: 'Who is coming', whoEmpty: 'Quiet so far. You can be the first.',
       nYes: 'confirmed', nMaybe: 'still thinking', nBar: 'applied for the bar', nAct: ['performance', 'performances'], nCook: ['cook', 'cooks'],
@@ -529,7 +529,12 @@
         el('div', { class: 'more' }, [el('input', { type: 'text', name: 'wish', maxlength: '200', placeholder: t('wishPh'), value: me.wish })]), sync);
       tasks.push(santaTask);
     }
-    var rest = el('div', {}, [el('p', { class: 'onboard', style: 'margin-top:22px' }, [el('b', { text: t('partsH') }), el('small', { text: t('partsSub') })])].concat(tasks));
+    var closed = S.data.applyOpen === false;
+    if (closed) tasks.slice(0, 3).forEach(function (c) {
+      c.hidden = !c._in.checked;
+      Array.prototype.forEach.call(c.querySelectorAll('input, textarea'), function (f) { f.disabled = true; });
+    });
+    var rest = el('div', {}, [el('p', { class: 'onboard', style: 'margin-top:22px' }, [el('b', { text: t('partsH') }), el('small', { text: closed ? t('partsClosed') : t('partsSub') })])].concat(tasks));
     form.appendChild(rest);
 
     var send = el('button', { type: 'submit', class: 'btn', style: 'margin-top:14px', text: t('send') });
@@ -556,7 +561,7 @@
       var r = val('rsvp');
       if (!r) { msg.textContent = t('eRsvp'); msg.hidden = false; return; }
       var p = ['cook', 'bar', 'act'].filter(on);
-      if (r !== 'no' && on('bar') && !val('shift')) { msg.textContent = t('eShift'); msg.hidden = false; return; }
+      if (!closed && r !== 'no' && on('bar') && !val('shift')) { msg.textContent = t('eShift'); msg.hidden = false; return; }
       send.disabled = true; send.textContent = t('sending');
       api('POST', { k: S.k, rsvp: r, parts: p, shift: val('shift'), act: val('actText'), plus: val('plus'), santa: on('santa'), wish: val('wish'), note: val('note'), show: on('show') })
         .then(function (j) {
@@ -583,7 +588,7 @@
       el('span', { class: 'hand', text: me.rsvp === 'yes' ? t('doneYes') : me.rsvp === 'maybe' ? t('doneMaybe') : t('doneNo') }),
       el('p', { text: t('doneSub') }),
       recap.childNodes.length ? recap : null,
-      recap.childNodes.length && me.parts.length ? el('p', { class: 'hint', text: t('doneParts') }) : null,
+      recap.childNodes.length && me.parts.length ? el('p', { class: 'hint', text: S.data.applyOpen === false ? t('partsClosed') : t('doneParts') }) : null,
       el('button', { type: 'button', class: 'btn ghost small', text: t('edit'), on: { click: function () { S.editing = true; render(); } } })
     ], { id: 'done' })]);
   }
