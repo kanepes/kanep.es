@@ -88,6 +88,9 @@ job cards you take). Handwriting font is Caveat Brush: plain Caveat puts the mac
 - **Bar shifts, kitchen, stage = applications** (since 26.11.2026): no cap, one bar hour per person, the page shows how many
   applied per hour. Applications close at the end of 16.12 (`applyOpen` in lib/zsv.js; RSVP stays changeable, existing
   applications are kept, declining clears them); the team chooses on 16.12 (not disclosed). Planned 2 per hour (maybe 3).
+- **Decision display:** the panel fills `Apstiprinātā bāra stunda`, `Apstiprināts virtuvei`, `Apstiprināts skatuvei` and ticks
+  `Lēmums paziņots`. Only when applications are closed AND that box is ticked does the API send `me.decision`; the page then
+  shows the confirmed parts and a thank-you line for parts applied for but not given. Before that the decision is not in any response.
 - **Who gets in:** only rows with `Ielūgums` = Apstiprināts or Nosūtīts.
 - **Links:** personal link `?k=<token>`; token = HMAC(`ZSV_SECRET`, Notion page id), never stored. Guests get theirs by email
   (written to the `Saite` column by the admin action). Team uses one shared link `?t=<ZSV_TEAM_CODE>`: pick your name once

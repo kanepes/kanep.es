@@ -276,7 +276,9 @@
       show: 'Rādīt manu vārdu citiem ielūgtajiem',
       send: 'Nosūtīt atbildi', sending: 'Sūtām…',
       doneYes: 'Tiekamies!', doneMaybe: 'Turam īkšķus!', doneNo: 'Žēl. Nākamgad!',
-      doneSub: 'Atbilde saņemta. To var mainīt līdz 16. decembrim.', doneParts: 'Tavi pieteikumi. Pieteikties var līdz 16. decembrim, tad izvēlēsimies un paziņosim.', edit: 'Mainīt atbildi',
+      doneSub: 'Atbilde saņemta. To var mainīt līdz 16. decembrim.', doneParts: 'Tavi pieteikumi. Pieteikties var līdz 16. decembrim, tad izvēlēsimies un paziņosim.',
+      decH: 'Tavs uzdevums vakarā', decOk: 'Apstiprināts. Paldies, ka piedalies!', decWhere: { cook: 'virtuvē', bar: 'aiz bāra', act: 'uz skatuves' }, decAnd: ' un ',
+      decNo: function (w) { return 'Šoreiz ' + w + ' vietas pietrūka. Paldies, ka pieteicies, un nāc vienkārši svinēt!'; }, edit: 'Mainīt atbildi',
       rShift: 'Bāra maiņa', rCook: 'Vakariņu gatavošana ar AUSTRU', rAct: 'Priekšnesums', rSanta: 'Slepenais vecītis: piedalos', rPlus: 'Kopā ar',
       whoH: 'Kas jau nāk', whoEmpty: 'Pagaidām klusums. Tu vari būt pirmais.',
       nYes: 'apstiprinājuši', nMaybe: 'vēl domā', nBar: 'pieteikušies bāram', nAct: ['priekšnesums', 'priekšnesumi'], nCook: ['pavārs', 'pavāri'],
@@ -335,7 +337,9 @@
       show: 'Show my name to other invited people',
       send: 'Send reply', sending: 'Sending…',
       doneYes: 'See you there!', doneMaybe: 'Fingers crossed!', doneNo: 'Pity. Next year!',
-      doneSub: 'Reply received. You can change it until 16 December.', doneParts: 'Your applications. You can apply until 16 December, then we choose and let you know.', edit: 'Change reply',
+      doneSub: 'Reply received. You can change it until 16 December.', doneParts: 'Your applications. You can apply until 16 December, then we choose and let you know.',
+      decH: 'Your part on the night', decOk: 'Confirmed. Thank you for taking part!', decWhere: { cook: 'in the kitchen', bar: 'behind the bar', act: 'on stage' }, decAnd: ' and ',
+      decNo: function (w) { return 'This time there was no room for you ' + w + '. Thank you for applying, and do come simply to celebrate!'; }, edit: 'Change reply',
       rShift: 'Bar shift', rCook: 'Cooking dinner with AUSTRA', rAct: 'Performance', rSanta: 'Secret Santa: I am in', rPlus: 'Coming with',
       whoH: 'Who is coming', whoEmpty: 'Quiet so far. You can be the first.',
       nYes: 'confirmed', nMaybe: 'still thinking', nBar: 'applied for the bar', nAct: ['performance', 'performances'], nCook: ['cook', 'cooks'],
@@ -576,19 +580,37 @@
   function done(me) {
     var recap = el('div', { class: 'recap' });
     var chip = function (s) { recap.appendChild(el('span', { class: 'chip mono', text: s })); };
+    var dec = me.decision, decided = null;
     if (me.rsvp !== 'no') {
       if (me.plus) chip(t('rPlus') + ' ' + me.plus);
-      if (me.parts.indexOf('cook') >= 0) chip('✓ ' + t('kCook'));
-      if (me.parts.indexOf('bar') >= 0) chip('✓ ' + t('kBar') + ' ' + (me.shift || ''));
-      if (me.parts.indexOf('act') >= 0) chip('✓ ' + t('kAct'));
+      if (!dec) {
+        if (me.parts.indexOf('cook') >= 0) chip('✓ ' + t('kCook'));
+        if (me.parts.indexOf('bar') >= 0) chip('✓ ' + t('kBar') + ' ' + (me.shift || ''));
+        if (me.parts.indexOf('act') >= 0) chip('✓ ' + t('kAct'));
+      }
       if (me.santa) chip('✓ ' + t('santaH'));
+    }
+    if (dec) {
+      var got = el('div', { class: 'recap' });
+      if (dec.cook) got.appendChild(el('span', { class: 'chip mono', text: '✓ ' + t('kCook') }));
+      if (dec.bar) got.appendChild(el('span', { class: 'chip mono', text: '✓ ' + t('kBar') + ' ' + dec.bar }));
+      if (dec.act) got.appendChild(el('span', { class: 'chip mono', text: '✓ ' + t('kAct') }));
+      var missed = ['cook', 'bar', 'act'].filter(function (k) { return me.parts.indexOf(k) >= 0 && !dec[k]; }).map(function (k) { return t('decWhere')[k]; });
+      var said = missed.length > 1 ? missed.slice(0, -1).join(', ') + t('decAnd') + missed[missed.length - 1] : missed[0];
+      if (got.childNodes.length || missed.length) decided = el('div', {}, [
+        el('h3', { text: t('decH') }),
+        got.childNodes.length ? got : null,
+        got.childNodes.length ? el('p', { class: 'hint', text: t('decOk') }) : null,
+        missed.length ? el('p', { class: 'hint', text: t('decNo')(said) }) : null
+      ]);
     }
     return zone(t('rsvpH'), t('until'), [card('tape done', [
       el('div', { class: 'stamp', 'aria-hidden': 'true' }, [el('b', { text: me.rsvp === 'yes' ? t('yes') : me.rsvp === 'maybe' ? t('maybe') : t('no') }), el('span', { class: 'mono', text: 'KKC · 22.12' })]),
       el('span', { class: 'hand', text: me.rsvp === 'yes' ? t('doneYes') : me.rsvp === 'maybe' ? t('doneMaybe') : t('doneNo') }),
       el('p', { text: t('doneSub') }),
       recap.childNodes.length ? recap : null,
-      recap.childNodes.length && me.parts.length ? el('p', { class: 'hint', text: S.data.applyOpen === false ? t('partsClosed') : t('doneParts') }) : null,
+      recap.childNodes.length && me.parts.length && !dec ? el('p', { class: 'hint', text: S.data.applyOpen === false ? t('partsClosed') : t('doneParts') }) : null,
+      decided,
       el('button', { type: 'button', class: 'btn ghost small', text: t('edit'), on: { click: function () { S.editing = true; render(); } } })
     ], { id: 'done' })]);
   }
